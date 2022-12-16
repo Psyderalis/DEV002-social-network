@@ -1,0 +1,26 @@
+*, body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.pantalla, .presentacion, .login, .invitacion, .registro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+
+}
+.pantalla {
+    width: 50%;
+    height: 100%;
+    margin: 50px;
+    padding: 5%;
+    border: solid 1px;
+}
+.logo {
+    height: 100px;
+    width: 100px;
+    background-color: gray;
+}
