@@ -10,6 +10,8 @@
 </head>
 
 <body>
+  <div id="app"></div>
+
   <!-- PANTALLA INICIO-->
   <section class="pantalla" id="inicio">
     <section class="presentacion" id="presentacion">
@@ -24,7 +26,7 @@
     </form>
     <section class="invitacion" id="invitacion">
       <p class="pregunta" id="preguntas">¿No tienes una cuenta?</p>
-      <div class="" id="">Regístrate</div>
+      <div class="" id="signUpOption">Regístrate</div>
     </section>
 
 
@@ -40,7 +42,11 @@
       <input type="text" class="datosRegistro" id="" placeholder="Nombre*" value="">
       <input type="email" class="datosRegistro" id="" placeholder="Correo*" value="">
       <input type="password" class="datosRegistro" id="" placeholder="Contraseña*" value="">
-      <button type="submit" class="signUpBtn" id="signUpBtn">Crear cuenta</button>
+      <div class="">
+        <button id="backBtn">Atrás</button>
+        <button type="submit" class="signUpBtn" id="signUpBtn">Crear cuenta</button>
+      </div>
+
     </form>
 
   </section>
