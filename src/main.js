@@ -4,8 +4,3 @@ import { myFunction } from './lib/index.js';
 
 myFunction();
 
-const app = document.getElementById("app");
-
-function imprimirPantalla() {
-    
-}
