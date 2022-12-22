@@ -4,7 +4,7 @@
     display: flex;
 }
 
-.pantalla, .presentacion, .login, .invitacion, .registro {
+.pantalla, .presentacion, .login, .invitacion, .registro, .comenzar {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
