@@ -48,7 +48,7 @@ divCreado.innerHTML=
   </section>
 
 </section>`
- //agregar nodo
+ //agregar al elemento padre()body  el nodo(#app)
  elementoPadre.appendChild(divCreado);
 //ir a pantalla registrar
  elementoPadre.querySelector('.registrate').addEventListener('click', ()=>{
@@ -98,7 +98,7 @@ const pantallaRegistro= ()=> {
   }
 
 
-//-------------------------------------------------------------
+//--------------------------------------------------------------------------------
 /*
 const inicioSesion = ` <section class="pantalla" id="inicio">
 
