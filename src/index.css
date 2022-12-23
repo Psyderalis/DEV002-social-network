@@ -1,7 +1,8 @@
-*, body {
+body {
     margin: 0;
-    padding: 0;
+    padding: 0;  
     display: flex;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .pantalla, .presentacion, .login, .invitacion, .registro, .comenzar {
@@ -9,18 +10,63 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
 
-
+.presentacion, .login, .invitacion, .registro, .comenzar{
+    padding-left: 10%;
+    padding-right: 10%;
 }
 .pantalla {
-    width: 50%;
-    height: 100%;
-    margin: 50px;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: #90ADC6;
+    background-size: cover;
+    /*margin: 50px;
     padding: 5%;
-    border: solid 1px;
+    border: solid 1px;*/
+}
+.presentacion{
+   
+    margin-top:10%;
 }
 .logo {
     height: 100px;
     width: 100px;
     background-color: gray;
 }
+.nombre{
+
+font-style:normal;
+font-size: 40px;
+line-height: 54px;
+/* identical to box height */
+text-align: center;  
+color: #333652; 
+}
+
+.datosRegistro , .datosLogin{
+width: 220px;
+height: 40px;
+border: #E9EAEC;
+background: #E9EAEC;
+border-radius: 28px;
+padding-left: 10px;
+
+}
+
+.invitacion{
+    margin-bottom: 10%;
+}
+
+.registrate , .iniciar{
+    cursor:pointer;
+}
+
+
+
+
+
+
+
+
