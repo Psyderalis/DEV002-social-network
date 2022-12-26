@@ -20,7 +20,7 @@ background-color: #90ADC6;
     align-items: center;
     
 }
-.pantalla, .presentacion, .login, .invitacion, .registro, .comenzar {
+.pantalla, .presentacion, .pantallaCompu, .login, .invitacion, .registro, .comenzar {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -58,7 +58,7 @@ width: min-content;
 }
 
 label{
-width: 77%;
+width: 220px;
 font-size: 12px;
 text-align: initial;
 margin-top: 18px;
@@ -109,11 +109,17 @@ p{
    
 }
 
+.pantallaCompu{
+    width: 100%;
+
+}
+
 @media (min-width:375px) {
 body{
 background-color: #c3d4e4;
 display: flex;
 align-items: center;
+justify-content: center;
 
 }
 #app{
@@ -121,15 +127,38 @@ width: 375px;
 
 background-color: #90ADC6;     
 border-radius: 28px; 
-position: absolute; 
-right: 0;
-}
-
-
 
 }
 
 
 
+}
+@media (min-width:768px){
+#app{
+width: 100vw;
+height: 100vh;
+background-color: #c3d4e4;
+
+}
+.pantalla{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+width: 100%;
+}
+
+.pantallaCompu{
+width: 375px;
+height: 310px;
+background-color: #90ADC6;     
+border-radius: 28px; 
+
+}
+.presentacion{
+    width: 40%;
+}
+
+}
 
 

@@ -30,7 +30,7 @@ divCreado.innerHTML=
     <div class="nombre" id="">PETSBOOK</div>
     <p class="frase" id="frase">Un mundo para tu mascota</p>
   </section>
-
+  <section class= 'pantallaCompu'>
   <form class="login" id="login">
     <label for="loginEmail" class="loginEmail" >*Ingrese un correo existente.</label>
     <input type="email" class="datosLogin" id="loginEmail" placeholder="Correo*" value="">
@@ -45,7 +45,7 @@ divCreado.innerHTML=
 
   <section class="invitacion" id="invitacion">
     <p class="pregunta" id="preguntas">¿No tienes una cuenta? <span class="registrate" id="">Regístrate</span></p>
-   
+  </section>
   </section>
 
 </section>`
