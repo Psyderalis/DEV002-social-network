@@ -26,25 +26,26 @@ divCreado.innerHTML=
 `<section class="pantalla" id="inicio">
 
   <section class="presentacion" id="presentacion">
-    <div class="logo" id=""></div>
+    <img  class="logo" id="">
     <div class="nombre" id="">PETSBOOK</div>
     <p class="frase" id="frase">Un mundo para tu mascota</p>
   </section>
 
   <form class="login" id="login">
-    <label for="loginEmail">*Ingrese un correo existente.</label>
+    <label for="loginEmail" class="loginEmail" >*Ingrese un correo existente.</label>
     <input type="email" class="datosLogin" id="loginEmail" placeholder="Correo*" value="">
-    <label for="loginPassword">*Ingrese una contraseña mayor a 5 dígitos.</label>
+    <label for="loginPassword" class="loginPassword">*Ingrese una contraseña mayor a 5 dígitos.</label>
     <input type="password" class="datosLogin" id="loginPassword" placeholder="Contraseña*" value="">
     <button type="submit" class="loginBtn" id="loginBtn">Iniciar sesión</button>
   </form>
 
-  <div class="loginGoogle"> Ingresa con Google
+  <div class='google'> Ingresa con 
+  <img src='./Imagenes/LogoGoogle.png' id="loginGoogle">
   </div>
 
   <section class="invitacion" id="invitacion">
-    <p class="pregunta" id="preguntas">¿No tienes una cuenta?</p>
-    <div class="registrate" id="">Regístrate</div>
+    <p class="pregunta" id="preguntas">¿No tienes una cuenta? <span class="registrate" id="">Regístrate</span></p>
+   
   </section>
 
 </section>`
@@ -68,6 +69,8 @@ const pantallaRegistro= ()=> {
   //guardar información en el elemento
   divCreado.innerHTML=
 ` <section class="pantalla" id="registro">
+
+  <section class="pantalla" id="registro">
     <section class="presentacion" id="">
       <div class="logo" id=""></div>
       <div class="nombre" id="">PETSBOOK</div>
