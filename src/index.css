@@ -20,6 +20,10 @@ background-color: #90ADC6;
     align-items: center;
     
 }
+a {
+    margin: 10px;
+    }
+    
 .pantalla, .presentacion, .pantallaCompu, .login, .invitacion, .registro, .comenzar {
     display: flex;
     flex-direction: column;
