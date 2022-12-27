@@ -17,14 +17,18 @@ const inicioTemplate = `
       <input type="email" class="datosLogin" id="loginEmail" placeholder="Correo*" value="">
       <label for="loginPassword">*Ingrese una contraseña mayor a 5 dígitos.</label>
       <input type="password" class="datosLogin" id="loginPassword" placeholder="Contraseña*" value="">
-      <button type="submit" class="loginBtn" id="loginBtn">Iniciar sesión</button>
+      <a id="" href="/home"> 
+        <button type="button" class="loginBtn" id="loginBtn">Iniciar sesión</button>
+      </a>
     </form>
     <div class="loginGoogle"> Ingresa con Google
 
     </div>
     <section class="invitacion" id="invitacion">
       <p class="pregunta" id="preguntas">¿No tienes una cuenta?</p>
-      <div class="" id="signUpOption">Regístrate</div>
+      <a id="" href="/registro">
+        <div class="" id="signUpOption">Regístrate</div>
+      </a> 
     </section>
   </section>
 `;
@@ -43,11 +47,15 @@ const registroTemplate = `
       <input type="email" class="datosRegistro" id="signUpEmail" placeholder="Correo*" value="">
       <label for="signUpPassword">*Ingrese una contraseña mayor a 5 dígitos.</label>
       <input type="password" class="datosRegistro" id="signUpPassword" placeholder="Contraseña*" value="">
-      <button type="submit" class="signUpBtn" id="signUpBtn">Crear cuenta</button>
+      <a id="" href="/bienvenida">
+        <button type="button" class="signUpBtn" id="signUpBtn">Crear cuenta</button>
+      </a>
     </form>
     <section class="invitacion" id="invitacion">
       <p class="pregunta" id="preguntas">¿Ya tienes una cuenta?</p>
-      <div class="" id="signInOption">Inicia Sesión</div>
+      <a id="" href="/">
+        <div class="" id="signInOption">Inicia Sesión</div>
+      </a> 
     </section>
   </section>
 `;
@@ -66,15 +74,18 @@ const bienvenidaTemplate = `
 
     <section class="comenzar" id="">
       <p class="frase" id="frase">¡Lista para ser parte de Petsbook!</p>
-      <button>Comenzar</button>
+      <a id="" href="/home"> 
+        <button>Comenzar</button>
+      </a>
     </section>
   </section>
 `;
 
-const loginBtn = document.getElementById("loginBtn");
+const loginRoute = document.getElementById("loginBtn");
 const signUpOption = document.getElementById("signUpOption");
 const signInOption = document.getElementById("signInOption");
 const signUpBtn = document.getElementById("signUpBtn");
+
 
 //rutas y contenido de cada una
 const routes = {
@@ -82,7 +93,6 @@ const routes = {
   '/registro': registroTemplate,
   '/bienvenida': bienvenidaTemplate,
   '/home': "Home",
-
 };
 
 //obtener la vista según la ruta actual
@@ -99,26 +109,10 @@ function showCurrentView() {
 
 //con el evento popstate (cambio de ruta url) llamar a la función anterior
 window.addEventListener('popstate', showCurrentView);
+//mostrar vista de inicio al iniciar la app
 showCurrentView();
 
-loginBtn.addEventListener("submit", e => {
-  e.preventDefault();
-  history.pushState(null, "Home", "/home");
-});
-signUpOption.addEventListener("click", e => {
-  history.pushState(null, "Registro", "/registro");
-});
-signInOption.addEventListener("click", e => {
-  history.pushState(null, "Inicio", "/");
-});
-signUpBtn.addEventListener("submit", e => {
-  e.preventDefault();
-  history.pushState(null, "Bienvenida", "/bienvenida");
-});
-
-
-
-/*
+//???
 document.getElementById('nav').addEventListener('click', function(event) {
   const target = event.target;
   if (target.tagName === 'A') {
@@ -130,10 +124,10 @@ document.getElementById('nav').addEventListener('click', function(event) {
 
 
 
-
-
 //_______________________________________________
 /*
+
+
 
 //BOTONES Y NAVEGACIÓN POR RUTA
 const loginBtn = document.getElementById("loginBtn");

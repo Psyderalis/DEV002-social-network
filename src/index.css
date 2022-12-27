@@ -4,6 +4,10 @@
     display: flex;
 }
 
+a {
+margin: 10px;
+}
+
 .pantalla, .presentacion, .login, .invitacion, .registro, .comenzar {
     display: flex;
     flex-direction: column;
