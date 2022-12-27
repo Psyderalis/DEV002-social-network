@@ -4,6 +4,21 @@
     display: flex;
 }
 
+#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; 
+    width: 50%;
+    height: 80%;
+    margin: 50px;
+    padding: 5%;
+    border: solid 1px;
+}
+a {
+margin: 10px;
+}
+
 .pantalla, .presentacion, .login, .invitacion, .registro, .comenzar {
     display: flex;
     flex-direction: column;
