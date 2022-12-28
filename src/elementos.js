@@ -1,0 +1,1 @@
+export const mainApp=document.getElementById('app');
