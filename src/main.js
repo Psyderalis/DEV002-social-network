@@ -55,6 +55,8 @@ divCreado.innerHTML=
  elementoPadre.querySelector('.registrate').addEventListener('click', ()=>{
    pantallaRegistro()});
 
+
+
   return elementoPadre;
 }
 //llamar a la función
@@ -68,9 +70,7 @@ const pantallaRegistro= ()=> {
   elementoPadre.innerHTML='';
   //guardar información en el elemento
   divCreado.innerHTML=
-` <section class="pantalla" id="registro">
-
-  <section class="pantalla" id="registro">
+` <section class="pantalla" id="registrar">
     <section class="presentacion" id="">
       <div class="logo" id=""></div>
       <div class="nombre" id="">PETSBOOK</div>
