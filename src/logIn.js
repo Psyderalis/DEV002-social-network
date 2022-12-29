@@ -1,15 +1,16 @@
-import { pantallaRegistro } from "./signUp.js";
-import { mainApp } from "./elementos.js";
+import { mainApp ,onNavigate } from "./main.js";
+
+// import { pantallaRegistro } from "./signUp.js";
+
 // Para elementos referidos a iniciar sesión
-
-export const pantallaInicio = ()=> {
-
-//Pantalla 1 - Inicio de sesión---------------------------
-
-//limpiar el html
-mainApp.innerHTML='';
-//guardar información en el elemento
-mainApp.innerHTML=
+// //Pantalla 1 - Inicio de sesión---------------------------
+// //limpiar el html
+// ()=> {mainApp.innerHTML='';
+// //guardar información en el elemento
+// mainApp.innerHTML=
+ export default ()=>{
+  mainApp.innerHTML='';
+  const pantallaInicio = 
 `<section class="pantalla" id="inicio">
 
   <section class="presentacion" id="presentacion">
@@ -31,15 +32,20 @@ mainApp.innerHTML=
   </div>
 
   <section class="invitacion" id="invitacion">
-    <p class="pregunta" id="preguntas">¿No tienes una cuenta? <span class="registrate" id="">Regístrate</span></p>
+    <p class="pregunta" id="preguntas">¿No tienes una cuenta?
+    <span class="registrate" id=""  >Regístrate</span></p>
   </section>
   </section>
 
-</section>`
+</section>`;
+
+mainApp.innerHTML= pantallaInicio;
+
+
 
 //ir a pantalla registrar
- mainApp.querySelector('.registrate').addEventListener('click', ()=>{
-   pantallaRegistro()});
+mainApp.querySelector('.registrate').addEventListener('click', ()=>{
+   onNavigate('/registro')});
 
-  return mainApp;
-}
+  return mainApp;}
+ 

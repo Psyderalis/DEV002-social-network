@@ -5,8 +5,49 @@ import { myFunction } from './lib/index.js';
 
 myFunction();
 //------------------------------------------------------
-import { pantallaInicio  } from "./logIn.js";
-pantallaInicio();
+
+
+import logIn  from "./logIn.js";
+import signUp from './signUp.js';
+import { Bienvenida } from './welcome.js';
+
+export const mainApp=document.getElementById('app');
+const divx=document.getElementById('nuevo')
+
+const routes = {
+  '/':logIn,
+  '/registro':signUp,
+ 
+}
+
+export const onNavigate = (pathname) => {
+  window.history.pushState(
+    {},
+    pathname,
+    window.location.origin + pathname,
+  );
+divx.appendChild(routes[pathname]())
+};
+
+const component = routes[window.location.pathname]();
+
+// window.onpopstate = () => {
+//   mainApp.removeChild(root.firstChild);
+//   mainApp.append(component());
+// };
+
+divx.appendChild(component);
+
+
+// export const btnI= mainApp.querySelector('.registrate').addEventListener('click', ()=>{
+//   onNavigate('/registro');});
+
+// export const btnR= mainApp.querySelector('.iniciar').addEventListener('click', ()=>{
+//     onNavigate('/');});  
+
+
+
+
 //--------------------------------------------------------------------------------
 /*
 const inicioSesion = ` <section class="pantalla" id="inicio">
