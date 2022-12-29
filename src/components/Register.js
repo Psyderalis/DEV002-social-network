@@ -14,7 +14,7 @@ export const Register = () => {
     title.textContent = "Regístrate"
 
     button.addEventListener("click", () =>{
-        onNavigate("/");
+        onNavigate("/welcome");
     });
     buttonBack.addEventListener("click", () =>{
         onNavigate("/");

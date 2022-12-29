@@ -3,22 +3,16 @@ import { onNavigate } from "../main.js";
 export const Welcome = () => {
     const div = document.createElement("div");
     const title = document.createElement("h2");
-    const buttonLogin = document.createElement("button");
-    const buttonRegister = document.createElement("button");
+    const buttonGo = document.createElement("button");
 
-    buttonLogin.textContent = "Inicia Sesión";
-    buttonRegister.textContent = "Regístrate";
-    title.textContent = "La mejor red social";
+    buttonGo.textContent = "Comenzar";
+    title.textContent = "Bienvenida a la mejor red social";
 
-    buttonLogin.addEventListener("click", () =>{
-        onNavigate("/login");
-    })
-    buttonRegister.addEventListener("click", () =>{
-        onNavigate("/register");
+    buttonGo.addEventListener("click", () =>{
+        onNavigate("/home");
     })
 
-
-    div.append(title, buttonLogin, buttonRegister);
+    div.append(title, buttonGo);
 
     return div;
 };
