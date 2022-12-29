@@ -7,9 +7,9 @@ myFunction();
 //------------------------------------------------------
 
 
-import logIn  from "./logIn.js";
-import signUp from './signUp.js';
-import { Bienvenida } from './welcome.js';
+import logIn  from "./components/logIn.js";
+import signUp from './components/signUp.js';
+import welcome from './components/welcome.js';
 
 export const mainApp=document.getElementById('app');
 const mainTrue=document.getElementById('nuevo')
@@ -17,6 +17,7 @@ const mainTrue=document.getElementById('nuevo')
 const routes = {
   '/':logIn,
   '/registro':signUp,
+  // '/bienvenido':welcome,
  
 }
 
@@ -26,24 +27,17 @@ export const onNavigate = (pathname) => {
     pathname,
     window.location.origin + pathname,
   );
+
 mainTrue.appendChild(routes[pathname]())
 };
 
-const component = routes[window.location.pathname]();
+const component = routes[window.location.pathname];
 
-// window.onpopstate = () => {
-//   mainApp.removeChild(root.firstChild);
-//   mainApp.append(component());
-// };
+window.onpopstate = () => {
+  mainTrue.append(component());
+};
 
-mainTrue.appendChild(component);
-
-
-// export const btnI= mainApp.querySelector('.registrate').addEventListener('click', ()=>{
-//   onNavigate('/registro');});
-
-// export const btnR= mainApp.querySelector('.iniciar').addEventListener('click', ()=>{
-//     onNavigate('/');});  
+mainTrue.appendChild(component());
 
 
 
