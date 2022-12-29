@@ -4,10 +4,7 @@ import { mainApp ,onNavigate } from "./main.js";
 
 // Para elementos referidos a iniciar sesión
 // //Pantalla 1 - Inicio de sesión---------------------------
-// //limpiar el html
-// ()=> {mainApp.innerHTML='';
-// //guardar información en el elemento
-// mainApp.innerHTML=
+
  export default ()=>{
   mainApp.innerHTML='';
   const pantallaInicio = 

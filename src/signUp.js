@@ -1,10 +1,7 @@
 // import { pantallaInicio } from "./logIn.js";
 import { mainApp, onNavigate } from "./main.js";
 
- //   //limpiar el html
-  //   mainApp.innerHTML='';
-  //   //guardar información en el elemento
-  //   mainApp.innerHTML=
+ 
 //Pantalla 2 - Registrate --------------------------------
 export default  ()=> {
   mainApp.innerHTML='';

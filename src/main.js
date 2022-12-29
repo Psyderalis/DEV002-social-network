@@ -12,7 +12,7 @@ import signUp from './signUp.js';
 import { Bienvenida } from './welcome.js';
 
 export const mainApp=document.getElementById('app');
-const divx=document.getElementById('nuevo')
+const mainTrue=document.getElementById('nuevo')
 
 const routes = {
   '/':logIn,
@@ -26,7 +26,7 @@ export const onNavigate = (pathname) => {
     pathname,
     window.location.origin + pathname,
   );
-divx.appendChild(routes[pathname]())
+mainTrue.appendChild(routes[pathname]())
 };
 
 const component = routes[window.location.pathname]();
@@ -36,7 +36,7 @@ const component = routes[window.location.pathname]();
 //   mainApp.append(component());
 // };
 
-divx.appendChild(component);
+mainTrue.appendChild(component);
 
 
 // export const btnI= mainApp.querySelector('.registrate').addEventListener('click', ()=>{
