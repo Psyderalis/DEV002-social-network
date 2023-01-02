@@ -52,4 +52,13 @@ googleLog();
 login();
 return mainApp;
 }
- 
+
+//  ir a pantalla de home
+export const goToHome = () => {
+  mainApp= "";
+  mainApp.querySelector('.loginBtn').addEventListener('click', ()=>{
+  onNavigate('/home');
+
+return mainApp;
+})
+}

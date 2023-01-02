@@ -6,7 +6,7 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: 100vw;
     height: 100vh;
-background-color: #90ADC6;
+background-color: #2e3031;
 
 }
 
@@ -17,8 +17,7 @@ background-color: #90ADC6;
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    /* align-items: center; */
 }
 .pantalla, .presentacion, .pantallaCompu, .login, .invitacion, .registro, .comenzar {
     display: flex;
@@ -132,15 +131,9 @@ border-radius: 28px;
 }
 
 
-
 }
 @media (min-width:768px){
-#app{
-width: 100vw;
-height: 100vh;
-background-color: #c3d4e4;
-
-}
+#app{width: 100vw;height: 100vh;background-color: #c3d4e4;}
 .pantalla{
 display: flex;
 flex-direction: row;
