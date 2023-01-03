@@ -1,12 +1,14 @@
-// eslint-disable-next-line import/no-cycle
+/* eslint-disable no-undef */
+/* eslint-disable import/no-cycle */
 import { mainApp } from '../main.js';
+// import {credentials} from "../app/googleLogin.js" onNavigate
 // Pantalla 3 - Bienvenida--------------------------------
 
 export default () => {
   mainApp.innerHTML = '';
   const Bienvenida = `<section class="pantalla" id="bienvenida">
 <section class="presentacion" id="">
-  <p class="frase" id="">¡Hola NOMBRE, tu cuenta ha sido creada con exito!</p>
+  <p class="frase" id="">¡Hola ${credentials.displayName}, tu cuenta ha sido creada con exito!</p>
   <div class="logo" id=""></div>
   <p class="frase" id="">Recuerda que...</p>
   <p class="frase" id="">Un mundo mejor es aquel donde

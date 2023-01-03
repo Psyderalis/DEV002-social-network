@@ -10,6 +10,7 @@ import { myFunction } from './lib/index.js';
 import logIn from './components/logIn.js';
 import signUp from './components/signUp.js';
 import welcome from './components/welcome.js';
+import home from './components/home.js';
 
 myFunction();
 
@@ -20,7 +21,7 @@ const routes = {
   '/': logIn,
   '/registro': signUp,
   // '/bienvenido':welcome,
-
+  '/home': home,
 };
 
 export const onNavigate = (pathname) => {
