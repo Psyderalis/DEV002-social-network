@@ -1,37 +1,36 @@
-import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"
-import { auth } from './firebase.js'
+/* eslint-disable import/no-unresolved */
+/* eslint-disable no-alert */
+/* eslint-disable no-console */
+import { createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
+import { auth } from './firebase.js';
 
-
-
-export const signup=()=>{
-const signupForm = document.querySelector('#registro')
-console.log('funciona signup')
-signupForm.addEventListener('submit', async (e) => {
-    e.preventDefault()
+export const signup = () => {
+  const signupForm = document.querySelector('#registro');
+  console.log('funciona signup');
+  signupForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
     // let signupName = signupForm['signup-name'].value
-    let signupEmail = signupForm['signup-email'].value
-    let signupPassword = signupForm['signup-password'].value
-    console.log(signupEmail, signupPassword)
+    const signupEmail = signupForm['signup-email'].value;
+    const signupPassword = signupForm['signup-password'].value;
+    console.log(signupEmail, signupPassword);
 
     try {
-       const userCredential = await createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
-       console.log(userCredential)
-        // .then((res) => console.log(res))
-        // .catch((err) => console.log(err))
-
+      // eslint-disable-next-line max-len
+      const userCredential = await createUserWithEmailAndPassword(auth, signupEmail, signupPassword);
+      console.log(userCredential);
+      // .then((res) => console.log(res))
+      // .catch((err) => console.log(err))
     } catch (error) {
-        console.log(error.message)
-        console.log(error.code)
+      console.log(error.message);
+      console.log(error.code);
 
-        if (error.code === 'auth/email-already-in-use'){
-            alert('Este correo ya está en uso')
-        }else if (error.code === 'auth/weak-password'){
-            alert('Tu contraseña es muy débil')
-        }else if (error.code === 'auth/invalid-email'){
-            alert('Este correo es inválido')
-        }
+      if (error.code === 'auth/email-already-in-use') {
+        alert('Este correo ya está en uso');
+      } else if (error.code === 'auth/weak-password') {
+        alert('Tu contraseña es muy débil');
+      } else if (error.code === 'auth/invalid-email') {
+        alert('Este correo es inválido');
+      }
     }
-
-})
-
-}
+  });
+};

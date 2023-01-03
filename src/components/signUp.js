@@ -1,13 +1,12 @@
 // import { pantallaInicio } from "./logIn.js";
-import { signup } from "../app/signupForm.js";
-import { mainApp, onNavigate } from "../main.js";
+import { signup } from '../app/signupForm.js';
+// eslint-disable-next-line import/no-cycle
+import { mainApp, onNavigate } from '../main.js';
 
- 
-//Pantalla 2 - Registrate --------------------------------
-export default  ()=> {
-  mainApp.innerHTML='';
-  const pantallaRegistro=  
-  ` <section class="pantalla" id="registrar">
+// Pantalla 2 - Registrate --------------------------------
+export default () => {
+  mainApp.innerHTML = '';
+  const pantallaRegistro = ` <section class="pantalla" id="registrar">
       <section class="presentacion" id="">
         <div class="logo" id=""></div>
         <div class="nombre" id="">PETSBOOK</div>
@@ -30,15 +29,15 @@ export default  ()=> {
         </section>
       </section>
       
-    </section>`
-    mainApp.innerHTML=pantallaRegistro
+    </section>`;
+  mainApp.innerHTML = pantallaRegistro;
 
-    //ir a pantalla iniciar sesión
-    document.querySelector('.iniciar').addEventListener('click', ()=>{
-      onNavigate('/')});
-       
+  // ir a pantalla iniciar sesión
+  document.querySelector('.iniciar').addEventListener('click', () => {
+    onNavigate('/');
+  });
 
-    signup();
+  signup();
 
-    return mainApp; }
-   
+  return mainApp;
+};

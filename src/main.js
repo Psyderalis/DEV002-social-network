@@ -1,25 +1,27 @@
+/* eslint-disable max-len */
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/no-cycle */
 // Para el DOM
 // Este es el punto de entrada de tu aplicacion
 
 import { myFunction } from './lib/index.js';
-
-myFunction();
 //------------------------------------------------------
 
-
-import logIn  from "./components/logIn.js";
+import logIn from './components/logIn.js';
 import signUp from './components/signUp.js';
 import welcome from './components/welcome.js';
 
-export const mainApp=document.getElementById('app');
-const mainTrue=document.getElementById('nuevo')
+myFunction();
+
+export const mainApp = document.getElementById('app');
+const mainTrue = document.getElementById('nuevo');
 
 const routes = {
-  '/':logIn,
-  '/registro':signUp,
+  '/': logIn,
+  '/registro': signUp,
   // '/bienvenido':welcome,
- 
-}
+
+};
 
 export const onNavigate = (pathname) => {
   window.history.pushState(
@@ -28,7 +30,7 @@ export const onNavigate = (pathname) => {
     window.location.origin + pathname,
   );
 
-mainTrue.appendChild(routes[pathname]())
+  mainTrue.appendChild(routes[pathname]());
 };
 
 const component = routes[window.location.pathname];
@@ -38,9 +40,6 @@ window.onpopstate = () => {
 };
 
 mainTrue.appendChild(component());
-
-
-
 
 //--------------------------------------------------------------------------------
 /*
@@ -112,7 +111,6 @@ const Bienvenida= `<section class="pantalla" id="bienvenida">
 </section>
 </section>`;
 
-
 //Aplicar funcionalidad-----------------------------------
 
 //crear un elemento
@@ -122,7 +120,7 @@ const elementoPadre=document.querySelector('#app');
 
 //--------Creando función que inserte el html
 const htmlDinamico=(pantalla) =>{
-  
+
 divCreado.innerHTML='';
 //guardar información en el elemento
 divCreado.innerHTML= pantalla;
@@ -131,8 +129,7 @@ divCreado.className='divCreado';
 //agregar nodo
 elementoPadre.appendChild(divCreado);
 
-
-return elementoPadre; 
+return elementoPadre;
 }
 
 console.log(elementoPadre.querySelector('.iniciar') )

@@ -1,16 +1,16 @@
-import { googleLog } from "../app/googleLogin.js";
-import { mainApp ,onNavigate } from "../main.js";
-import { login } from "../app/signin.js";
+/* eslint-disable indent */
+import { googleLog } from '../app/googleLogin.js';
+// eslint-disable-next-line import/no-cycle
+import { mainApp, onNavigate } from '../main.js';
+import { login } from '../app/signin.js';
 // import { pantallaRegistro } from "./signUp.js";
 
 // Para elementos referidos a iniciar sesión
 // //Pantalla 1 - Inicio de sesión---------------------------
 
- export default ()=>{
-  
-  mainApp.innerHTML='';
-  const pantallaInicio = 
-`<section class="pantalla" id="inicio">
+ export default () => {
+  mainApp.innerHTML = '';
+  const pantallaInicio = `<section class="pantalla" id="inicio">
 
   <section class="presentacion" id="presentacion">
     <img  class="logo" id="">
@@ -39,17 +39,14 @@ import { login } from "../app/signin.js";
 
 </section>`;
 
-mainApp.innerHTML= pantallaInicio;
+mainApp.innerHTML = pantallaInicio;
 
+// ir a pantalla registrar
+mainApp.querySelector('.registrate').addEventListener('click', () => {
+   onNavigate('/registro');
+});
 
-
-//ir a pantalla registrar
-mainApp.querySelector('.registrate').addEventListener('click', ()=>{
-   onNavigate('/registro')});
-
-  
 googleLog();
 login();
 return mainApp;
-}
- 
+};

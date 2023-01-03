@@ -1,10 +1,10 @@
-import { mainApp ,onNavigate } from "../main.js";
-//Pantalla 3 - Bienvenida--------------------------------
+// eslint-disable-next-line import/no-cycle
+import { mainApp } from '../main.js';
+// Pantalla 3 - Bienvenida--------------------------------
 
-export default ()=>{
-  mainApp.innerHTML='';
-  const Bienvenida= 
-   `<section class="pantalla" id="bienvenida">
+export default () => {
+  mainApp.innerHTML = '';
+  const Bienvenida = `<section class="pantalla" id="bienvenida">
 <section class="presentacion" id="">
   <p class="frase" id="">¡Hola NOMBRE, tu cuenta ha sido creada con exito!</p>
   <div class="logo" id=""></div>
@@ -21,16 +21,11 @@ export default ()=>{
 </section>
 </section>`;
 
-mainApp.innerHTML= Bienvenida;
+  mainApp.innerHTML = Bienvenida;
 
-
-
-// //ir a pantalla home
-// mainApp.querySelector('.registrate').addEventListener('click', ()=>{
-//    onNavigate('/registro')});
-
-
+  // //ir a pantalla home
+  // mainApp.querySelector('.registrate').addEventListener('click', ()=>{
+  //    onNavigate('/registro')});
 
   return mainApp;
-
-}
+};
