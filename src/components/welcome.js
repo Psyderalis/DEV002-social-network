@@ -1,4 +1,5 @@
 import { mainApp ,onNavigate } from "../main.js";
+// import {credentials} from "../app/googleLogin.js"
 //Pantalla 3 - Bienvenida--------------------------------
 
 export default ()=>{
@@ -6,7 +7,7 @@ export default ()=>{
   const Bienvenida= 
    `<section class="pantalla" id="bienvenida">
 <section class="presentacion" id="">
-  <p class="frase" id="">¡Hola NOMBRE, tu cuenta ha sido creada con exito!</p>
+  <p class="frase" id="">¡Hola ${credentials.displayName}, tu cuenta ha sido creada con exito!</p>
   <div class="logo" id=""></div>
   <p class="frase" id="">Recuerda que...</p>
   <p class="frase" id="">Un mundo mejor es aquel donde

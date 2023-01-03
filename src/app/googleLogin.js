@@ -8,10 +8,11 @@ const botonGoogle = document.getElementById('loginGoogle')
 botonGoogle.addEventListener('click', async () => {
     const provider = new GoogleAuthProvider()
     try{
-        const credentials = await signInWithPopup(auth, provider)
+     const credentials = await signInWithPopup(auth, provider)
         console.log(credentials)
     }catch (error) {
         console.log(error.code)
     }
+
 })
-}
+}   
