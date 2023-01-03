@@ -10,6 +10,7 @@ myFunction();
 import logIn  from "./components/logIn.js";
 import signUp from './components/signUp.js';
 import welcome from './components/welcome.js';
+import home from './components/home.js';
 
 export const mainApp=document.getElementById('app');
 const mainTrue=document.getElementById('nuevo')
@@ -18,6 +19,7 @@ const routes = {
   '/':logIn,
   '/registro':signUp,
   // '/bienvenido':welcome,
+  '/home': home,
  
 }
 
