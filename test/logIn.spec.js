@@ -1,8 +1,8 @@
+/* eslint-disable no-unused-vars */
 import 'jest';
-import login from '../src/app/__mocks__/signin.js';
+import loginM from '../src/app/__mocks__/signin.js';
+
 import login from '../src/app/signin.js';
-
-
 
 // describe('Testing login', () => {
 
@@ -12,10 +12,8 @@ import login from '../src/app/signin.js';
 // });
 
 describe('lista de notas', () => {
-    it('Debería poder iniciar sesion', () => {
-      return login('Anita', '123456')
-        .then((user) => {
-          expect(user.email).toBe('Anita')
-        })
-    });
-  })
+  it('Debería poder iniciar sesion', () => login('Anita', '123456')
+    .then((user) => {
+      expect(user.email).toBe('Anita');
+    }));
+});

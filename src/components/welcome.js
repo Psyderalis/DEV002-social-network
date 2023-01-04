@@ -1,11 +1,12 @@
-import { mainApp ,onNavigate } from "../main.js";
-// import {credentials} from "../app/googleLogin.js"
-//Pantalla 3 - Bienvenida--------------------------------
+/* eslint-disable no-undef */
+/* eslint-disable import/no-cycle */
+import { mainApp } from '../main.js';
+// import {credentials} from "../app/googleLogin.js" onNavigate
+// Pantalla 3 - Bienvenida--------------------------------
 
-export default ()=>{
-  mainApp.innerHTML='';
-  const Bienvenida= 
-   `<section class="pantalla" id="bienvenida">
+export default () => {
+  mainApp.innerHTML = '';
+  const Bienvenida = `<section class="pantalla" id="bienvenida">
 <section class="presentacion" id="">
   <p class="frase" id="">¡Hola ${credentials.displayName}, tu cuenta ha sido creada con exito!</p>
   <div class="logo" id=""></div>
@@ -22,16 +23,11 @@ export default ()=>{
 </section>
 </section>`;
 
-mainApp.innerHTML= Bienvenida;
+  mainApp.innerHTML = Bienvenida;
 
-
-
-// //ir a pantalla home
-// mainApp.querySelector('.registrate').addEventListener('click', ()=>{
-//    onNavigate('/registro')});
-
-
+  // //ir a pantalla home
+  // mainApp.querySelector('.registrate').addEventListener('click', ()=>{
+  //    onNavigate('/registro')});
 
   return mainApp;
-
-}
+};
