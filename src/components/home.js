@@ -10,10 +10,10 @@ import { goToHome } from './logIn.js';
 export default () => {
   mainApp.innerHTML = '';
   const templateHome = `
-    
+  <div class='home'>  
     <div id="cabeza">
-     <p class='head'><img id= "logoDeVistaHome" src="imagenes/Logo.png" width=50px>
-     <span id="etsbook">ETSBOOK</span></p>
+     <div class='head'><img id= "logoDeVistaHome" src="imagenes/Logo.png" width=50px>
+     <span id="etsbook">ETSBOOK</span></div>
      <img id="mas" src="imagenes/mas.png" width=30px height=30px>
     </div>
 
@@ -25,6 +25,9 @@ export default () => {
     
     <div id='task-container'>
     </div>
+
+    </div>
+
     `;
 
   mainApp.innerHTML = templateHome;

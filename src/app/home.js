@@ -17,7 +17,7 @@ export const homeE = () => {
         const task = doc.data();
         divContain += `
         <div class='publicacion'>
-        <div> 
+        <div class='contenidoP'> 
         <p> ${task.description} </p>
         </div>
 
