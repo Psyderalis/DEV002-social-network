@@ -15,7 +15,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #90ADC6;
 }
+
+/*----Inicio sesión y Registro--------------------------------------------------------- */
 .pantalla, .presentacion, .pantallaCompu, .login, .invitacion, .registro, .comenzar {
     display: flex;
     flex-direction: column;
@@ -82,6 +85,8 @@ font-size: 18px;
 margin-top: 18px;
 margin-bottom: 18px;
 }
+
+
 .google{
     display: flex;
     align-items: center;
@@ -94,33 +99,28 @@ margin-bottom: 18px;
     margin-left: 10px;
 }
 
-
-
 p{
     margin: 0;
 }
 .registrate , .iniciar{
     cursor:pointer;
-    font-weight: bold;
-   
+    font-weight: bold;  
 }
 
 .pantallaCompu{
     margin: 0;
     width: 100%;
-
 }
 
 
-
-/* -----HOME---------------------------- */
+/* -----HOME---------------------------------- */
 .home {
  height: 100%;
  width: 100%;
 background-color: #FCFCFC;
 }
 
-/* encabezado */
+/* encabezado------- */
 #cabeza {
     background-color: #90adc6;
     display: flex;
@@ -144,6 +144,7 @@ padding-left: 10px;
 
 #mas {
 margin-right: 10px;
+cursor: pointer;
 }
 
 /* formulario para publicar */
@@ -162,7 +163,7 @@ margin-right: 10px;
     width: 80%;
     height: 50px;
     border-color: rgba(0, 0, 0, 0.219);
-    cursor: pointer;
+    cursor: text;
 }
 
 .fotoDePerfil {
@@ -182,9 +183,10 @@ margin-right: 10px;
     cursor: pointer;
 }
 
+/* -Contenido de posts */
 #task-container{
     width: 100%;
-    height: 60%;
+    /* height: 60%; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -217,6 +219,10 @@ div.publicacion{
 
 
 
+
+
+/* 
+
 @media (min-width:375px) {
 body{
 background-color: #c3d4e4;
@@ -234,7 +240,7 @@ border-radius: 28px;
 }
 
 
-}
+} */
 /* @media (min-width:768px){
 #app{width: 100vw;height: 100vh;background-color: #c3d4e4;}
 .pantalla{
