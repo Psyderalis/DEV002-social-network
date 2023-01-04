@@ -51,13 +51,13 @@ login();
 return mainApp;
 };
 
-//  ir a pantalla de home
-export const goToHome = () => {
-  // eslint-disable-next-line no-import-assign
- // mainApp = '';
-  mainApp.querySelector('.loginBtn').addEventListener('click', () => {
-  onNavigate('/home');
+// //  ir a pantalla de home
+// export const goToHome = () => {
+//   // eslint-disable-next-line no-import-assign
+//  // mainApp = '';
+//   mainApp.querySelector('.loginBtn').addEventListener('click', () => {
+//   onNavigate('/home');
 
-return mainApp;
-});
-};
+// return mainApp;
+// });
+// };

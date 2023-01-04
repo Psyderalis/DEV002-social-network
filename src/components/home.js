@@ -4,7 +4,7 @@
 /* eslint-disable import/no-cycle */
 import { homeE } from '../app/home.js';
 import { mainApp, onNavigate } from '../main.js';
-import { goToHome } from './logIn.js';
+// import { goToHome } from './logIn.js';
 // Vista de Home de Petsbook
 
 export default () => {
