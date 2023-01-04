@@ -114,6 +114,17 @@ p{
 
 }
 
+
+#task-container{
+    width: 100%;
+    height: 60%;
+
+    justify-content: center;
+}
+
+.publicacion{
+    width: 50%;
+}
 @media (min-width:375px) {
 body{
 background-color: #c3d4e4;

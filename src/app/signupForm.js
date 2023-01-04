@@ -9,9 +9,9 @@ export const signup = () => {
   console.log('funciona signup');
   signupForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    // let signupName = signupForm['signup-name'].value
-    const signupEmail = signupForm['signup-email'].value;
-    const signupPassword = signupForm['signup-password'].value;
+    // const signupName = signupForm['signUpName'].value
+    const signupEmail = signupForm.signUpEmail.value;
+    const signupPassword = signupForm.signUpPassword.value;
     console.log(signupEmail, signupPassword);
 
     try {
