@@ -22,12 +22,17 @@ export const Register = () => {
         </form>
         <section class="invitacion" id="invitacion">
             <p class="pregunta" id="preguntas">¿Ya tienes una cuenta?</p>
-            <div class="iniciar" id="">Inicia Sesión</div>
+            <div class="iniciar" id="iniciar">Inicia Sesión</div>
         </section>
     </section>
   `;
   div.innerHTML = pantallaRegistro;
   const signUpBtn = div.querySelector("#signUpBtn");
+  const iniciar = div.querySelector("#iniciar");
+
+  iniciar.addEventListener("click", () =>{
+       onNavigate("/");
+      });
 
   signUpBtn.addEventListener("click", (e) =>{
     e.preventDefault();

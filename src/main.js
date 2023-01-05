@@ -1,5 +1,5 @@
 // Este es el punto de entrada de tu aplicacion
-import './app/firebase.js'
+import './app/signupForm.js'
 import { Welcome } from "./components/Welcome.js";
 import { Login } from "./components/Login.js";
 import { Register } from "./components/Register.js";

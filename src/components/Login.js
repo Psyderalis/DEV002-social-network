@@ -30,7 +30,6 @@ export const Login = () => {
   div.innerHTML = pantallaInicio;
   const loginBtn = div.querySelector("#loginBtn");
   const registrate = div.querySelector("#registrate");
-  console.log(registrate)
 
   loginBtn.addEventListener("click", (e) =>{
     e.preventDefault();
@@ -39,23 +38,6 @@ export const Login = () => {
   registrate.addEventListener("click", () =>{
        onNavigate("/register");
       });
-    // const title = document.createElement("h2");
-    // const button = document.createElement("button");
-    // const buttonRegister = document.createElement("button");
-    // const inputEmail = document.createElement("input");
-    // const inputPass = document.createElement("input");
-
-
-    // button.textContent = "Entrar";
-    // buttonRegister.textContent = "Regístrate"
-    // title.textContent = "Inicia Sesión"
-
-    // button.addEventListener("click", () =>{
-    //     onNavigate("/home");
-    // });
-    // buttonRegister.addEventListener("click", () =>{
-    //     onNavigate("/register");
-    // });
    
     return div;
 }; 
