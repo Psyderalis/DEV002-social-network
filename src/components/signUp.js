@@ -1,14 +1,12 @@
-// import { pantallaInicio } from "./logIn.js";
 //import { signup } from '../app/signupForm.js'; **
-// eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 
 // Pantalla 2 - Registrate --------------------------------
-  export const Register = () => {
-    const div = document.createElement("div");
-    div.className = "pantalla";
-    div.id = "inicio";
-    const pantallaRegistro = `
+export const Register = () => {
+  const div = document.createElement("div");
+  div.className = "pantalla";
+  div.id = "registrar";
+  const pantallaRegistro = `
     <section class="presentacion" id="">
         <div class="logo" id=""></div>
         <div class="nombre" id="">PETSBOOK</div>
@@ -36,13 +34,13 @@ import { onNavigate } from '../main.js';
   const signUpBtn = div.querySelector("#signUpBtn");
   const iniciar = div.querySelector("#iniciar");
 
-  signUpBtn.addEventListener("click", (e) =>{
+  signUpBtn.addEventListener("click", (e) => {
     e.preventDefault();
     onNavigate("/bienvenida");
-   });
-   iniciar.addEventListener("click", () =>{
+  });
+  iniciar.addEventListener("click", () => {
     onNavigate("/");
-   });
+  });
 
   //signup();
 
