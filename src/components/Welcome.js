@@ -1,4 +1,4 @@
-//import { onNavigate } from "../main.js";
+import { onNavigate } from "../main.js";
 
 export const Welcome = () => {
     const div = document.createElement("div");
@@ -16,9 +16,13 @@ export const Welcome = () => {
 </section>
 <section class="comenzar" id="">
   <p class="frase" id="frase">¡Lista para ser parte de Petsbook!</p>
-  <button>Comenzar</button>
+  <button id="comenzarBtn">Comenzar</button>
 </section>
 </section>`;
 div.innerHTML = Bienvenida;
+const comenzarBtn = div.querySelector("#comenzarBtn");
+comenzarBtn.addEventListener("click", () =>{
+  onNavigate("/home");
+ });
     return div;
 };

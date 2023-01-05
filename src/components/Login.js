@@ -1,4 +1,4 @@
-//import { onNavigate } from "../main.js";
+import { onNavigate } from "../main.js";
 
 export const Login = () => {
     const div = document.createElement("div");
@@ -23,11 +23,22 @@ export const Login = () => {
     </div>
     <section class="invitacion" id="invitacion">
       <p class="pregunta" id="preguntas">¿No tienes una cuenta?
-      <span class="registrate" id=""  >Regístrate</span></p>
+      <span class="registrate" id="registrate"  >Regístrate</span></p>
     </section>
   </section>
   `;
   div.innerHTML = pantallaInicio;
+  const loginBtn = div.querySelector("#loginBtn");
+  const registrate = div.querySelector("#registrate");
+  console.log(registrate)
+
+  loginBtn.addEventListener("click", (e) =>{
+    e.preventDefault();
+    onNavigate("/home");
+   });
+  registrate.addEventListener("click", () =>{
+       onNavigate("/register");
+      });
     // const title = document.createElement("h2");
     // const button = document.createElement("button");
     // const buttonRegister = document.createElement("button");

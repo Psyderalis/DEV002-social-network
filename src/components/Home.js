@@ -1,8 +1,7 @@
 //import { onNavigate } from "../main.js";
 
 export const Home = () => {
-    
-
-    div.innerHTML = Bienvenida;
+    const div = document.createElement("div");
+    div.innerHTML = "HOME";
     return div;
 }; 

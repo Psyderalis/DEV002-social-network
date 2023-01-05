@@ -1,4 +1,4 @@
-//import { onNavigate } from "../main.js";
+import { onNavigate } from "../main.js";
 
 export const Register = () => {
     const div = document.createElement("div");
@@ -27,5 +27,11 @@ export const Register = () => {
     </section>
   `;
   div.innerHTML = pantallaRegistro;
+  const signUpBtn = div.querySelector("#signUpBtn");
+
+  signUpBtn.addEventListener("click", (e) =>{
+    e.preventDefault();
+    onNavigate("/welcome");
+   });
     return div;
 }; 
