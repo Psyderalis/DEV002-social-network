@@ -26,7 +26,8 @@ window.addEventListener('load', function () {
             }
             else if (error.code === 'auth/invalid-email') {
                 alert("Invalid email")
-            } else if (error.code === "auth/weak-password") {
+            } 
+            else if (error.code === "auth/weak-password") {
                 alert("Password is too weak")
             }
             else if (error.code) {
