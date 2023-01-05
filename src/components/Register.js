@@ -34,9 +34,9 @@ export const Register = () => {
        onNavigate("/");
       });
 
-  signUpBtn.addEventListener("click", (e) =>{
-    e.preventDefault();
-    onNavigate("/welcome");
-   });
+//   signUpBtn.addEventListener("click", (e) =>{
+//     e.preventDefault();
+//     onNavigate("/welcome");
+//    });
     return div;
 }; 

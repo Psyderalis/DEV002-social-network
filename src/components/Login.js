@@ -31,10 +31,10 @@ export const Login = () => {
   const loginBtn = div.querySelector("#loginBtn");
   const registrate = div.querySelector("#registrate");
 
-  loginBtn.addEventListener("click", (e) =>{
-    e.preventDefault();
-    onNavigate("/home");
-   });
+  // loginBtn.addEventListener("click", (e) =>{
+  //   e.preventDefault();
+  //   onNavigate("/home");
+  //  });
   registrate.addEventListener("click", () =>{
        onNavigate("/register");
       });
