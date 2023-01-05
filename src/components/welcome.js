@@ -9,17 +9,17 @@ export const Welcome = () => {
   div.id = "bienvenida";
   const Bienvenida = `
     <section class="presentacion" id="">
-      <p class="frase" id="">¡Hola {credentials.displayName}, tu cuenta ha sido creada con exito!</p>
+      <p >¡Hola {credentials.displayName}, tu cuenta ha sido creada con exito!</p>
       <div class="logo" id=""></div>
-      <p class="frase" id="">Recuerda que...</p>
-      <p class="frase" id="">Un mundo mejor es aquel donde
-                            todos los animales tienen amigos
-                            con los que compartir sus
-                            aventuras.</p>
+      <p >Recuerda que...</p>
+      <p >Un mundo mejor es aquel donde
+          todos los animales tienen amigos
+          con los que compartir sus
+          aventuras.</p>
     </section>
     <section class="comenzar" id="">
       <p class="frase" id="frase">¡Lista para ser parte de Petsbook!</p>
-      <button id="comenzarBtn">Comenzar</button>
+      <button class="comenzarBtn" id="comenzarBtn">Comenzar</button>
     </section>
   `;
   div.innerHTML = Bienvenida;
