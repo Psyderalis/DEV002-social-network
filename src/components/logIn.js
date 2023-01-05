@@ -37,13 +37,21 @@ export const Login = () => {
 </section>
 `;
 div.innerHTML = pantallaInicio;
-// ir a pantalla registrar
-  document.getElementById("registrate").addEventListener("click", () =>{
-        onNavigate("/registro");
- });
+// ir a pantalla registrar y home
+const loginBtn = div.querySelector("#loginBtn");
+const registrate = div.querySelector("#registrate");
+console.log(registrate)
 
- googleLog();
- login();
+loginBtn.addEventListener("click", (e) =>{
+  e.preventDefault();
+  onNavigate("/home");
+ });
+registrate.addEventListener("click", () =>{
+     onNavigate("/registro");
+    });
+
+//  googleLog();
+//  login();
   return div;
 }; 
 

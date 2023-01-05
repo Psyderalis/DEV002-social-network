@@ -14,40 +14,39 @@ myFunction();
 // import home from './components/home.js';
 
 import { Login } from './components/logIn.js'
-// import { Welcome } from "./components/Welcome.js";
-// import { Register } from "./components/Register.js";
-// import { Home } from "./components/Home.js";
-
+import { Welcome } from './components/welcome.js';
+import { Register } from './components/signUp.js';
+import { Home } from './components/home.js';
 
 
 //export const mainApp = document.getElementById('app');
- const root = document.getElementById('nuevo');
+const root = document.getElementById('nuevo');
 
 const routes = {
-  '/': Login,
-  '/registro': "registro",//signUp,
-  // '/bienvenida':welcome,
-  //'/home': home,
+    '/': Login,
+    '/registro': Register,
+    '/bienvenida': Welcome,
+    '/home': Home,
 };
 
 export const onNavigate = (pathname) => {
-  window.history.pushState(
-    {},
-    pathname,
-    window.location.origin + pathname,
-  );
+    window.history.pushState(
+        {},
+        pathname,
+        window.location.origin + pathname,
+    );
 
-  //mainTrue.appendChild(routes[pathname]());
-  root.removeChild(root.firstChild)
-  root.appendChild(routes[pathname]());
+    //mainTrue.appendChild(routes[pathname]());
+    root.removeChild(root.firstChild)
+    root.appendChild(routes[pathname]());
 };
 
 const component = routes[window.location.pathname];
 
 window.onpopstate = () => {
-  //mainTrue.append(component());
-  root.removeChild(root.firstChild);
-  root.append(component());
+    //mainTrue.append(component());
+    root.removeChild(root.firstChild);
+    root.append(component());
 };
 
 root.appendChild(component());
