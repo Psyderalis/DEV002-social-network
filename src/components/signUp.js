@@ -1,48 +1,47 @@
 //import { signup } from '../app/signupForm.js'; **
 import { onNavigate } from '../main.js';
+import { signUp } from "../app/signupForm.js";
+
 
 // Pantalla 2 - Registrate --------------------------------
-export const signUp = () => {
-    window.addEventListener('load', function () {
-        //El archivo padre ha terminado de cargar
+export const Register = () => {
+    const div = document.createElement("div");
+    div.className = "pantalla";
+    div.id = "inicio";
+    const pantallaRegistro = `
+    <section class="presentacion" id="">
+        <div class="logo" id=""></div>
+        <div class="nombre" id="">PETSBOOK</div>
+        <p class="frase" id="frase">Un mundo para tu mascota</p>
+    </section>
+    <section class= 'pantallaCompu'>
+        <form class="registro" id="registro">
+            <label for="signUpName">*Ingrese el nombre de su mascota.</label>
+            <input type="text" class="datosRegistro" id="signUpName" placeholder="Nombre*" value="">
+            <label for="signUpEmail">*Ingrese un correo existente.</label>
+            <input type="email" class="datosRegistro" id="signUpEmail" placeholder="Correo*" value="">
+            <label for="signUpPassword">*Ingrese una contraseña mayor a 5 dígitos.</label>
+            <input type="password" class="datosRegistro" id="signUpPassword" placeholder="Contraseña*" value="">
+            <button type="submit" class="signUpBtn" id="signUpBtn">Crear cuenta</button>
+        </form>
+        <section class="invitacion" id="invitacion">
+            <p class="pregunta" id="preguntas">¿Ya tienes una cuenta?</p>
+            <div class="iniciar" id="iniciar">Inicia Sesión</div>
+        </section>
+    </section>
+  `;
+    div.innerHTML = pantallaRegistro;
+    const signUpBtn = div.querySelector("#signUpBtn");
+    const iniciar = div.querySelector("#iniciar");
 
-        const div = document.querySelector(".pantalla");
-        const signupForm = div.querySelector("#registro");
-        //const signupForm = document.querySelector("#registro")
-        console.log(signupForm)
-
-        signupForm.addEventListener("submit", async (e) => {
-            e.preventDefault();
-
-            const email = signupForm.signUpEmail.value;
-            const password = signupForm.signUpPassword.value;
-            console.log(email, password)
-
-            try {
-                const userCredentials = await createUserWithEmailAndPassword(auth, email, password)
-                console.log(userCredentials)
-            } catch (error) {
-                console.log(error.message)
-                console.log(error.code)
-
-                if (error.code === "auth/email-already-in-use") {
-                    alert("Email already use")
-                }
-                else if (error.code === 'auth/invalid-email') {
-                    alert("Invalid email")
-                }
-                else if (error.code === "auth/weak-password") {
-                    alert("Password is too weak")
-                }
-                else if (error.code) {
-                    this.alert("Something went wrong")
-                }
-
-            }
-
-        })
-
-
+    iniciar.addEventListener("click", () => {
+        onNavigate("/");
     });
 
-}
+    //   signUpBtn.addEventListener("click", (e) =>{
+    //     e.preventDefault();
+    //     onNavigate("/welcome");
+    //    });
+    signUp();
+    return div;
+}; 
