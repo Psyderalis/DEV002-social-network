@@ -4,33 +4,47 @@
 import { createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
 import { auth } from './firebase.js';
 
-export const signup = () => {
-  const signupForm = document.querySelector('#registro');
-  console.log('funciona signup');
-  signupForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    // const signupName = signupForm.signUpName.value
-    const signupEmail = signupForm.signUpEmail.value;
-    const signupPassword = signupForm.signUpPassword.value;
-    console.log(signupEmail, signupPassword);
+export const signUp = () => {
+    window.addEventListener('load', function () {
+        //El archivo padre ha terminado de cargar
 
-    try {
-      // eslint-disable-next-line max-len
-      const userCredential = await createUserWithEmailAndPassword(auth, signupEmail, signupPassword);
-      console.log(userCredential);
-      // .then((res) => console.log(res))
-      // .catch((err) => console.log(err))
-    } catch (error) {
-      console.log(error.message);
-      console.log(error.code);
+        const div = document.querySelector(".pantalla");
+        const signupForm = div.querySelector("#registro");
+        //const signupForm = document.querySelector("#registro")
+        console.log(signupForm)
 
-      if (error.code === 'auth/email-already-in-use') {
-        alert('Este correo ya está en uso');
-      } else if (error.code === 'auth/weak-password') {
-        alert('Tu contraseña es muy débil');
-      } else if (error.code === 'auth/invalid-email') {
-        alert('Este correo es inválido');
-      }
-    }
-  });
-};
+        signupForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const email = signupForm.signUpEmail.value;
+            const password = signupForm.signUpPassword.value;
+            console.log(email, password);
+
+            try {
+                const userCredentials = await createUserWithEmailAndPassword(auth, email, password)
+                console.log(userCredentials)
+            } catch (error) {
+                console.log(error.message)
+                console.log(error.code)
+
+                if (error.code === "auth/email-already-in-use") {
+                    alert("Email already use")
+                }
+                else if (error.code === 'auth/invalid-email') {
+                    alert("Invalid email")
+                }
+                else if (error.code === "auth/weak-password") {
+                    alert("Password is too weak")
+                }
+                else if (error.code) {
+                    this.alert("Something went wrong")
+                }
+
+            }
+
+        })
+
+
+    });
+
+}
