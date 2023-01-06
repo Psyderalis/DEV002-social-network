@@ -2,6 +2,7 @@
 //import { signup } from '../app/signupForm.js'; **
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
+import { signUp } from "../app/signupForm.js";
 
 // Pantalla 2 - Registrate --------------------------------
   export const Register = () => {
@@ -34,17 +35,16 @@ import { onNavigate } from '../main.js';
 
   // ir a pantalla home e iniciar sesión
   const signUpBtn = div.querySelector("#signUpBtn");
-  const iniciar = div.querySelector("#iniciar");
+    const iniciar = div.querySelector("#iniciar");
 
-  signUpBtn.addEventListener("click", (e) =>{
-    e.preventDefault();
-    onNavigate("/bienvenida");
-   });
-   iniciar.addEventListener("click", () =>{
-    onNavigate("/");
-   });
+    iniciar.addEventListener("click", () => {
+        onNavigate("/");
+    });
 
-  //signup();
-
-  return div;
-};
+    //   signUpBtn.addEventListener("click", (e) =>{
+    //     e.preventDefault();
+    //     onNavigate("/welcome");
+    //    });
+    signUp();
+    return div;
+}; 
