@@ -34,15 +34,14 @@ export const Register = () => {
   const signUpBtn = div.querySelector("#signUpBtn");
   const iniciar = div.querySelector("#iniciar");
 
-  signUpBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    onNavigate("/bienvenida");
-  });
   iniciar.addEventListener("click", () => {
-    onNavigate("/");
-  });
+        onNavigate("/");
+    });
 
-  //signup();
-
-  return div;
-};
+    //   signUpBtn.addEventListener("click", (e) =>{
+    //     e.preventDefault();
+    //     onNavigate("/welcome");
+    //    });
+    signUp();
+    return div;
+}; 
