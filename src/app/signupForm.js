@@ -1,45 +1,48 @@
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"
 import { auth } from "./firebase.js"
 
-window.addEventListener('load', function () {
-    // El archivo padre ha terminado de cargar
 
-    const div = document.querySelector(".pantalla");
-    const signupForm = div.querySelector("#registro");
+export const signUp = () => {
+    window.addEventListener('load', function () {
+        //El archivo padre ha terminado de cargar
 
-    signupForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
+        const div = document.querySelector(".pantalla");
+        const signupForm = div.querySelector("#registro");
+        //const signupForm = document.querySelector("#registro")
+        console.log(signupForm)
 
-        const email = signupForm["signUpEmail"].value
-        const password = signupForm["signUpPassword"].value
-        console.log(email, password)
+        signupForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
 
-        try {
-            const userCredentials = await createUserWithEmailAndPassword(auth, email, password)
-            console.log(userCredentials)
-        } catch (error) {
-            console.log(error.message)
-            console.log(error.code)
+            const email = signupForm.signUpEmail.value;
+            const password = signupForm.signUpPassword.value;
+            console.log(email, password);
 
-            if (error.code === "auth/email-already-in-use") {
-                alert("Email already use")
+            try {
+                const userCredentials = await createUserWithEmailAndPassword(auth, email, password)
+                console.log(userCredentials)
+            } catch (error) {
+                console.log(error.message)
+                console.log(error.code)
+
+                if (error.code === "auth/email-already-in-use") {
+                    alert("Email already use")
+                }
+                else if (error.code === 'auth/invalid-email') {
+                    alert("Invalid email")
+                }
+                else if (error.code === "auth/weak-password") {
+                    alert("Password is too weak")
+                }
+                else if (error.code) {
+                    this.alert("Something went wrong")
+                }
+
             }
-            else if (error.code === 'auth/invalid-email') {
-                alert("Invalid email")
-            } 
-            else if (error.code === "auth/weak-password") {
-                alert("Password is too weak")
-            }
-            else if (error.code) {
-                this.alert("Something went wrong")
-            }
 
-        }
-
-    })
-
-    //console.log(div, signupForm)
-});
+        })
 
 
+    });
 
+}

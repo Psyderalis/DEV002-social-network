@@ -1,4 +1,5 @@
 import { onNavigate } from "../main.js";
+import { signUp } from "../app/signupForm.js";
 
 export const Register = () => {
     const div = document.createElement("div");
@@ -26,17 +27,18 @@ export const Register = () => {
         </section>
     </section>
   `;
-  div.innerHTML = pantallaRegistro;
-  const signUpBtn = div.querySelector("#signUpBtn");
-  const iniciar = div.querySelector("#iniciar");
+    div.innerHTML = pantallaRegistro;
+    const signUpBtn = div.querySelector("#signUpBtn");
+    const iniciar = div.querySelector("#iniciar");
 
-  iniciar.addEventListener("click", () =>{
-       onNavigate("/");
-      });
+    iniciar.addEventListener("click", () => {
+        onNavigate("/");
+    });
 
-//   signUpBtn.addEventListener("click", (e) =>{
-//     e.preventDefault();
-//     onNavigate("/welcome");
-//    });
+    //   signUpBtn.addEventListener("click", (e) =>{
+    //     e.preventDefault();
+    //     onNavigate("/welcome");
+    //    });
+    signUp();
     return div;
 }; 

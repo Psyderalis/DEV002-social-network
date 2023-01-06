@@ -1,8 +1,8 @@
 // Este es el punto de entrada de tu aplicacion
 import './app/signupForm.js'
-import { Welcome } from "./components/Welcome.js";
 import { Login } from "./components/Login.js";
 import { Register } from "./components/Register.js";
+import { Welcome } from "./components/Welcome.js";
 import { Home } from "./components/Home.js";
 
 const root = document.getElementById("root");
