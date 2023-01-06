@@ -39,12 +39,7 @@ export const signUp = () => {
                 else if (error.code) {
                     this.alert("Something went wrong")
                 }
-
             }
-
         })
-
-
     });
-
 }

@@ -8,13 +8,14 @@ import { auth } from './firebase.js';
 // const signin = document.querySelector('#loginBtn')
 // console.log('holitas')
 export const login = () => {
+  window.addEventListener('load', function () {
   const signin = document.querySelector('#login');
 
   signin.addEventListener('submit', async (e) => {
     e.preventDefault();
     console.log('si lo lee');
-    const email = signin['signin-email'].value;
-    const password = signin['signin-password'].value;
+    const email = signin['loginEmail'].value;
+    const password = signin['loginPassword'].value;
     console.log(email);
 
     try {
@@ -25,4 +26,5 @@ export const login = () => {
       console.log(error);
     }
   });
+})
 };

@@ -1,6 +1,6 @@
 
 // import { googleLog } from '../app/googleLogin.js'; **
-// import { login } from '../app/signin.js'; **
+ import { login } from '../app/signin.js'; 
 import { onNavigate } from '../main.js';
 
 
@@ -38,18 +38,18 @@ export const Login = () => {
   // ir a pantalla registrar y home
   const loginBtn = div.querySelector("#loginBtn");
   const registrate = div.querySelector("#registrate");
-  console.log(registrate)
+  //console.log(registrate)
 
-  loginBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    onNavigate("/home");
-  });
+  // loginBtn.addEventListener("click", (e) => {
+  //   e.preventDefault();
+  //   onNavigate("/home");
+  // });
   registrate.addEventListener("click", () => {
     onNavigate("/registro");
   });
 
   //  googleLog();
-  //  login();
+    login();
   return div;
 };
 
