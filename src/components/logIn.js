@@ -1,9 +1,6 @@
-
-// import { googleLog } from '../app/googleLogin.js'; **
- import { login } from '../app/signin.js'; 
+import { googleLog } from '../app/googleLogin.js';
+import { login } from '../app/signin.js';
 import { onNavigate } from '../main.js';
-
-
 
 // //Pantalla 1 - Inicio de sesión---------------------------
 
@@ -36,20 +33,29 @@ export const Login = () => {
 `;
   div.innerHTML = pantallaInicio;
   // ir a pantalla registrar y home
-  const loginBtn = div.querySelector("#loginBtn");
-  const registrate = div.querySelector("#registrate");
-  //console.log(registrate)
 
-  // loginBtn.addEventListener("click", (e) => {
-  //   e.preventDefault();
-  //   onNavigate("/home");
-  // });
+  //const loginBtn = div.querySelector("#loginBtn");
+  const signinForm = div.querySelector('#login');
+  const botonGoogle = div.querySelector('#loginGoogle');
+  const registrate = div.querySelector("#registrate");
+
+  signinForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = signinForm['loginEmail'].value;
+    const password = signinForm['loginPassword'].value;
+    console.log(email, password)
+    login(email, password);
+    //   onNavigate("/home");
+  });
+
+  botonGoogle.addEventListener('click', () => {
+    googleLog();
+  });
+
   registrate.addEventListener("click", () => {
     onNavigate("/registro");
   });
 
-  //  googleLog();
-    login();
   return div;
 };
 
