@@ -5,52 +5,34 @@ body {
     width: 100vw;
     height: 100vh;
 }
-.root {
+
+#app{
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100%;
-}
-.pantalla{
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
     justify-content: center;
     align-items: center;
     background-color: #90ADC6;
-    color: #333652;
-    font-size: 16px;
 }
 
 /*----Inicio sesión y Registro--------------------------------------------------------- */
- .presentacion, .pantallaCompu, .login, .invitacion, .registro, .comenzar {
+.pantalla, .presentacion, .pantallaCompu, .login, .invitacion, .registro, .comenzar {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    margin: 5px;
 }
-/* --------Bienvenida---------------- */
 
-#bienvenida {
-    color: rgba(233, 234, 236, 1);
-    line-height: 2;
-}
-#bienvenida .logo {
-    margin: 20px;
-}
-#bienvenida p {
+.pantalla {
     width: 70%;
-}
-#bienvenida .frase {
-    font-weight: bolder;
-}
+    height: 87%;
+    color: #333652;
+    font-size: 16px;
 
-
+}
 
 .logo {
     background-image: url('./Imagenes/Logo.png');
@@ -90,7 +72,7 @@ padding-left: 10px;
 
 }
 
-.loginBtn , .signUpBtn, .comenzarBtn{
+.loginBtn , .signUpBtn{
 width: 186px;
 height: 48px;
 background: #333652;
@@ -107,7 +89,6 @@ margin-bottom: 18px;
 .google{
     display: flex;
     align-items: center;
-    margin: 5px;
 }
 #loginGoogle{
     height: 19px;
@@ -160,42 +141,9 @@ padding-left: 10px;
     font-weight: bold;
 }
 
-.menuArriba {
-    display: flex;
-    flex-direction: column;
-    margin-right: 20px;
-    align-items: flex-end;
-}
-
-#puntos {
+#mas {
+margin-right: 10px;
 cursor: pointer;
-}
-.modalPuntos{
-    display: none;
-    justify-content: center;
-    align-items: center;
-    color: rgba(91, 91, 91, 1);
-    height: 40px;
-    width: 240px;
-    background-color: rgba(250, 250, 250, 1);
-    border-radius: 10px;
-    box-shadow: 3px 3px 3px rgb(175, 174, 174);
-}
-
-.logOut {
-    display: flex;
-    align-items: center;
-}
-
-.modalPuntos p, .logoutIcon, .x {
-    font-size: 90%;
-    margin: 0 10px 0 10px;
-}
-.logoutQ {
-    display: none;
-    height: 50%;
-    width: 80%;
-    background-color: #90ADC6;
 }
 
 /* formulario para publicar */
@@ -203,12 +151,12 @@ cursor: pointer;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    border-color: #d9d9d9;
+    /* border-color: ; */
     border-radius: 15px;
-    border-width: 4px;
+    border: 4px solid  #857979;
     padding: 20px;
+    margin: 10px;
 }
-
 .inputPostPorPublicar {
     border-radius: 30px;
     width: 80%;
@@ -216,14 +164,12 @@ cursor: pointer;
     border-color: rgba(0, 0, 0, 0.219);
     cursor: text;
 }
-
 .fotoDePerfil {
     border-radius: 50%;
     width: 40px;
     height: 40px;
     padding: 5px
 }
-
 .Publicar {
     background-color: #333652;
     border-radius: 40px;
@@ -232,19 +178,26 @@ cursor: pointer;
     border: none;
     cursor: pointer;
 }
-
 /* -Contenido de posts */
-#task-container{
+.post {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    border: 4px solid #c7c2c2;
+    border-radius: 20px;
+    margin: 15px auto 15px auto;
+}
+
+#task-container {
     width: 100%;
     /* height: 60%; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    
 }
-
-div.publicacion{
+/* publicacion */
+div.publicacion {
     width: 80%;
     height: auto;
     border: solid;
@@ -254,11 +207,21 @@ div.publicacion{
     padding: 15px;
     margin: 10px;
 }
-
-.contenidoP{
+/* contenidoP */
+.contenidoP {
     border-color: rgba(0, 0, 0, 0.5);
     border-width: 3px;
+    padding: 15px;
 }
+/* delete editar */
+.delete {
+   border-radius: 0px 0px 10px 10px;
+} 
+
+.editar{
+    border-radius: 10px 10px 0px 0px;
+}
+
 .delete,
 .editar {
     /* background-color: #333652; */
@@ -267,28 +230,48 @@ div.publicacion{
     cursor: pointer;
     display: none;
 }
-
-.delete {
-    border-radius: 0px 0px 10px 10px;
- } 
- .editar{
-     border-radius: 10px 10px 0px 0px;
- }
- 
-
-/* Menú desplegable del icono más */
-ul, li{
-    list-style: none;
-    position: sticky;
-   
+.footerDeHome {
+    /* align-self: flex-end; */
+    background-color: #90ADC6;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* align-content: flex-end; */
+    flex-direction: row;
+    padding-top: 10px;
+    padding-bottom: 10px;}
+.divIconoHome {
+    width: 38px;
+    height: 38px;
+    background-color: #333652;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-ul:hover li{
-    background-color: #ffffff;
-    color: #000000;
-    display: block;
-    position: relative;
+.cabezaDePost {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #FAD02C;
+    border-radius: 15px 15px 0px 0px;
+    border-color: #d9d9d9;
 }
-
+.nombreDeUsuario {
+    margin-left: -70px;
+}
+.cuerpoDePost {
+    /* background-color: aliceblue; */
+    background-color: #e9eaec;
+    height: auto;
+}
+.linea {
+    width: 100%;
+    background-color: #d9d9d9;
+    height: 3px;
+}
 .footerDePost {
     display: flex;
     flex-direction: row;
@@ -297,9 +280,35 @@ ul:hover li{
      background-color: #e9eaec;
     border-radius: 0px 0px 15px 15px;
 } 
+
+/* Menú desplegable del icono más */
+
+ul, li{
+    list-style: none;
+    position: sticky;
+   
+}
+
+ul:hover li{
+    background-color: #ffffff;
+    color: #000000;
+    display: block;
+    position: relative;
+}
 /* ------------------------------------------- */
+/* #modal-eliminar {
+    background-color: #6ad11c;
+}
 
+#contenedor-modal-eliminar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 580px;
+    height: 580px;
+    background-color: rgba(255, 255, 255, 0.566);
 
+} */
 
 
 
@@ -346,4 +355,3 @@ border-radius: 28px;
 
 }
  */
-
