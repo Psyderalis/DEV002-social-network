@@ -31,11 +31,15 @@ export const Home = () => {
             </form> 
             <div id='task-container'>
             </div>
-            <div id="logoutQ" class="logoutQ">¿Quieres salir de Petsbook?</div>
+            <div id="logoutQ" class="logoutQ">
+                <p id="xSalir" class="xSalir"> X </p>
+                ¿Quieres salir de Petsbook?
+            </div>
     `;
 div.innerHTML = templateHome;
 //homeE();
 
+const xSalir = div.querySelector("#xSalir");
 const puntos = div.querySelector("#puntos");
 const modalPuntos = div.querySelector("#modalPuntos");
 const logOut = div.querySelector("#logOut")
@@ -52,10 +56,12 @@ x.addEventListener("click", function (){
 
 logOut.addEventListener("click", function (){
     logoutQ.style.display = "block"
-})
+});
 
-
-
+xSalir.addEventListener("click", function () {
+    logoutQ.style.display = "none"
+    modalPuntos.style.display = "none"
+});
     return div;
 };
 
