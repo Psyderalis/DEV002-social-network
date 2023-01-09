@@ -2,9 +2,7 @@ import {
   deleteTask, getTask, onGetTasks, saveTask, updateTask,
 } from './firebase.js';
 
-export const homeE = () => {
-  const taskContainer = document.getElementById('task-container');
-  const taskForm = document.getElementById('task-form');
+export const homeE = (taskContainer, taskForm) => {
   let editando = false;
   let id = '';
 
@@ -20,9 +18,11 @@ export const homeE = () => {
         <div class="cabezaDePost">
         <img class="fotoDePerfil" src="imagenes/pug.jpg" alt='foto del usuario'>
         <p class="nombreDeUsuario">Manchitas</p>
-        <ul class ="menu-horizontal"><img src="imagenes/mas.png" width=30px height=30px>
+        <ul disabled selected class ="menu-horizontal" id="mas"><img src="imagenes/mas.png" width=30px height=30px>
+         <div class="edit-delet">
          <li class='editar' data-id='${doc.id}'><img width=15px src="imagenes/editar.png"> Editar publicación</li>
          <li class='delete' data-id='${doc.id}'><img width=15px src="imagenes/eliminar.png"> Eliminar </li>
+         </div>
         </ul>
         </div>
         <div class="cuerpoDePost" >
