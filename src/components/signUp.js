@@ -1,15 +1,15 @@
-//import { signup } from '../app/signupForm.js'; **
+/* eslint-disable import/no-cycle */
+// import { signup } from '../app/signupForm.js'; **
 
 import { onNavigate } from '../main.js';
-import { signUp } from "../app/signupForm.js";
-
+import { signup } from '../app/signupForm.js';
 
 // Pantalla 2 - Registrate --------------------------------
 export const Register = () => {
-    const div = document.createElement("div");
-    div.className = "pantalla";
-    div.id = "inicio";
-    const pantallaRegistro = `
+  const div = document.createElement('div');
+  div.className = 'pantalla';
+  div.id = 'inicio';
+  const pantallaRegistro = `
     <section class="presentacion" id="">
         <div class="logo" id=""></div>
         <div class="nombre" id="">PETSBOOK</div>
@@ -31,18 +31,28 @@ export const Register = () => {
         </section>
     </section>
   `;
-    div.innerHTML = pantallaRegistro;
-    const signUpBtn = div.querySelector("#signUpBtn");
-    const iniciar = div.querySelector("#iniciar");
+  div.innerHTML = pantallaRegistro;
+  // const signUpBtn = div.querySelector('#signUpBtn');
+  const iniciar = div.querySelector('#iniciar');
 
-    iniciar.addEventListener("click", () => {
-        onNavigate("/");
-    });
+  iniciar.addEventListener('click', () => {
+    onNavigate('/');
+  });
 
-    //   signUpBtn.addEventListener("click", (e) =>{
-    //     e.preventDefault();
-    //     onNavigate("/welcome");
-    //    });
-    signUp();
-    return div;
-}; 
+  //   signUpBtn.addEventListener("click", (e) =>{
+  //     e.preventDefault();
+  //     onNavigate("/welcome");
+  //    });
+
+  // signup();
+  const signupForm = div.querySelector('#registro');
+
+  signupForm.addEventListener('submit', (e) => {
+    const signupEmail = signupForm.signUpEmail.value;
+    const signupPassword = signupForm.signUpPassword.value;
+    e.preventDefault();
+    signup(signupEmail, signupPassword);
+  });
+
+  return div;
+};
