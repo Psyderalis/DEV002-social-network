@@ -4,42 +4,21 @@
 import { createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
 import { auth } from './firebase.js';
 
-export const signUp = () => {
-    window.addEventListener('load', function () {
-        //El archivo padre ha terminado de cargar
+export async function signup(email, password) {
+  console.log('funciona SignUp');
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    console.log(userCredential);
+  } catch (error) {
+    console.log(error.message);
+    console.log(error.code);
 
-        const div = document.querySelector(".pantalla");
-        const signupForm = div.querySelector("#registro");
-        //const signupForm = document.querySelector("#registro")
-        console.log(signupForm)
-
-        signupForm.addEventListener("submit", async (e) => {
-            e.preventDefault();
-
-            const email = signupForm.signUpEmail.value;
-            const password = signupForm.signUpPassword.value;
-            console.log(email, password);
-
-            try {
-                const userCredentials = await createUserWithEmailAndPassword(auth, email, password)
-                console.log(userCredentials)
-            } catch (error) {
-                console.log(error.message)
-                console.log(error.code)
-
-                if (error.code === "auth/email-already-in-use") {
-                    alert("Email already use")
-                }
-                else if (error.code === 'auth/invalid-email') {
-                    alert("Invalid email")
-                }
-                else if (error.code === "auth/weak-password") {
-                    alert("Password is too weak")
-                }
-                else if (error.code) {
-                    this.alert("Something went wrong")
-                }
-            }
-        })
-    });
+    if (error.code === 'auth/email-already-in-use') {
+      alert('Este correo ya está en uso');
+    } else if (error.code === 'auth/weak-password') {
+      alert('Tu contraseña es muy débil');
+    } else if (error.code === 'auth/invalid-email') {
+      alert('Este correo es inválido');
+    }
+  }
 }
