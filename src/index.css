@@ -232,6 +232,31 @@ cursor: pointer;
     border: none;
     cursor: pointer;
 }
+/* --------------- */
+.cabezaDePost {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #FAD02C;
+    border-radius: 15px 15px 0px 0px;
+    border-color: #d9d9d9;
+}
+.nombreDeUsuario {
+    margin-left: -70px;
+}
+.cuerpoDePost {
+    /* background-color: aliceblue; */
+    background-color: #e9eaec;
+    height: auto;
+}
+.linea {
+    width: 100%;
+    background-color: #d9d9d9;
+    height: 3px;
+}
+
 
 /* -Contenido de posts */
 #task-container{
@@ -297,6 +322,7 @@ ul:hover li{
      background-color: #e9eaec;
     border-radius: 0px 0px 15px 15px;
 } 
+
 /* ------------------------------------------- */
 
 
