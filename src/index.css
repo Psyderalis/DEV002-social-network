@@ -259,12 +259,44 @@ div.publicacion{
     border-color: rgba(0, 0, 0, 0.5);
     border-width: 3px;
 }
-.delete, .editar{
-    background-color: #333652;
-    color: aliceblue;
-    border-radius: 20px;
+.delete,
+.editar {
+    /* background-color: #333652; */
+    /* color: aliceblue; */
+    padding: 7px 5px ;
     cursor: pointer;
+    display: none;
 }
+
+.delete {
+    border-radius: 0px 0px 10px 10px;
+ } 
+ .editar{
+     border-radius: 10px 10px 0px 0px;
+ }
+ 
+
+/* Menú desplegable del icono más */
+ul, li{
+    list-style: none;
+    position: sticky;
+   
+}
+ul:hover li{
+    background-color: #ffffff;
+    color: #000000;
+    display: block;
+    position: relative;
+}
+
+.footerDePost {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* background-color: aliceblue; */
+     background-color: #e9eaec;
+    border-radius: 0px 0px 15px 15px;
+} 
 /* ------------------------------------------- */
 
 
