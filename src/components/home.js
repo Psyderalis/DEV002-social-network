@@ -1,10 +1,13 @@
 
-//import { homeE } from '../app/home.js'; **
+import { homeE } from '../app/home.js'; 
 //import { onNavigate } from '../main.js'; **
 
 // Vista de Home de Petsbook
 
+
+
 export const Home = () => {
+
     const div = document.createElement("div");
     div.className = "home";
     div.id = "home";
@@ -44,8 +47,13 @@ export const Home = () => {
            </div>
 
     `;
+
 div.innerHTML = templateHome;
-//homeE();
+const taskContainer = div.querySelector('#task-container');
+console.log(taskContainer)
+const taskForm = div.querySelector('#task-form');
+console.log(taskForm)
+homeE(taskContainer,taskForm);
 
 const xSalir = div.querySelector("#xSalir");
 const puntos = div.querySelector("#puntos");

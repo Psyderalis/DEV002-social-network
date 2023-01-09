@@ -2,9 +2,7 @@ import {
   deleteTask, getTask, onGetTasks, saveTask, updateTask,
 } from './firebase.js';
 
-export const homeE = () => {
-  const taskContainer = document.getElementById('task-container');
-  const taskForm = document.getElementById('task-form');
+export const homeE = (taskContainer, taskForm) => {
   let editando = false;
   let id = '';
 
