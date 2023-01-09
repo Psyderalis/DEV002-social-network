@@ -16,15 +16,26 @@ export const homeE = () => {
       querySnapshot.forEach((doc) => {
         const task = doc.data();
         divContain += `
-        <div class='publicacion'>
-        <div class='contenidoP'> 
-        <p> ${task.description} </p>
+        <section class="post">
+        <div class="cabezaDePost">
+        <img class="fotoDePerfil" src="imagenes/pug.jpg" alt='foto del usuario'>
+        <p class="nombreDeUsuario">Manchitas</p>
+        <ul class ="menu-horizontal"><img src="imagenes/mas.png" width=30px height=30px>
+         <li class='editar' data-id='${doc.id}'><img width=15px src="imagenes/editar.png"> Editar publicación</li>
+         <li class='delete' data-id='${doc.id}'><img width=15px src="imagenes/eliminar.png"> Eliminar </li>
+        </ul>
         </div>
-
-        <button class='delete' data-id='${doc.id}'> Eliminar </button>
-        <button class='editar' data-id='${doc.id}'> Editar </button>
+        <div class="cuerpoDePost" >
+        <p class="contenidoP"> ${task.description} </p> 
         </div>
+        <div  class="linea"></div>
+        <div class="footerDePost">
+        <img src="imagenes/huella.png" width=30px>
+        <p>1 Me encanta</p>
+        </div>
+        </section>  
         `;
+
       });
       taskContainer.innerHTML = divContain;
 
