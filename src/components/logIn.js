@@ -1,6 +1,7 @@
 import { googleLog } from '../app/googleLogin.js';
 import { login } from '../app/signin.js';
 import { onNavigate } from '../main.js';
+import { observador } from '../app/observador.js';
 
 // //Pantalla 1 - Inicio de sesión---------------------------
 
@@ -34,6 +35,7 @@ export const Login = () => {
   div.innerHTML = pantallaInicio;
   // ir a pantalla registrar y home
 
+  observador();
   //const loginBtn = div.querySelector("#loginBtn");
   const signinForm = div.querySelector('#login');
   const botonGoogle = div.querySelector('#loginGoogle');

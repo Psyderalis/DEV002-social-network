@@ -2,6 +2,8 @@
 //import { homeE } from '../app/home.js'; **
 //import { onNavigate } from '../main.js'; **
 
+import { singOut } from "../app/logout.js";
+
 // Vista de Home de Petsbook
 
 export const Home = () => {
@@ -43,9 +45,10 @@ div.innerHTML = templateHome;
 const xSalir = div.querySelector("#xSalir");
 const puntos = div.querySelector("#puntos");
 const modalPuntos = div.querySelector("#modalPuntos");
-const logOut = div.querySelector("#logOut")
-const x = div.querySelector("#x")
-const logoutQ = div.querySelector("#logoutQ")
+const logOut = div.querySelector("#logOut");
+const x = div.querySelector("#x");
+const logoutQ = div.querySelector("#logoutQ");
+const logoutBtn = div.querySelector("#logoutBtn")
 
 puntos.addEventListener("click", function () {
  modalPuntos.style.display = "flex"
@@ -65,6 +68,11 @@ xSalir.addEventListener("click", function () {
     logoutQ.style.display = "none"
     modalPuntos.style.display = "none"
 });
+
+logoutBtn.addEventListener("click", function () {
+    singOut()
+});
+
     return div;
 };
 
