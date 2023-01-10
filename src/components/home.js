@@ -1,7 +1,7 @@
 
 import { homeE } from '../app/home.js'; 
 //import { onNavigate } from '../main.js'; **
-
+import { logout } from '../app/logout.js'
 // Vista de Home de Petsbook
 
 
@@ -64,9 +64,13 @@ const modalPuntos = div.querySelector("#modalPuntos");
 const logOut = div.querySelector("#logOut")
 const x = div.querySelector("#x")
 const logoutQContainer = div.querySelector("#logoutQContainer")
-
+const logoutBtn = div.querySelector('#logoutBtn')
 const logoutQ = div.querySelector("#logoutQ")
 
+logoutBtn.addEventListener('click', () => {
+    console.log('logout')
+    logout()
+});
 
 puntos.addEventListener("click", function () {
  modalPuntos.style.display = "flex"
