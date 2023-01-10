@@ -34,9 +34,12 @@ export const Home = () => {
             </form> 
             <div id='task-container'>
             </div>
-            <div id="logoutQ" class="logoutQ">
-                <p id="xSalir" class="xSalir"> X </p>
-                ¿Quieres salir de Petsbook?
+            <div id= "logoutQContainer" class="logoutQContainer"></div>
+                <div id="logoutQ" class="logoutQ">
+                    <p id="xSalir" class="xSalir"> X </p>
+                    <p id="Q" class="Q"> ¿Quieres salir de Petsbook? </p>
+                    <button id="logoutBtn" class="logoutBtn">Cerrar sesión</button>
+                </div>
             </div>
 
             <div class="footerDeHome">
@@ -60,7 +63,10 @@ const puntos = div.querySelector("#puntos");
 const modalPuntos = div.querySelector("#modalPuntos");
 const logOut = div.querySelector("#logOut")
 const x = div.querySelector("#x")
+const logoutQContainer = div.querySelector("#logoutQContainer")
+
 const logoutQ = div.querySelector("#logoutQ")
+
 
 puntos.addEventListener("click", function () {
  modalPuntos.style.display = "flex"
@@ -68,13 +74,18 @@ puntos.addEventListener("click", function () {
 
 x.addEventListener("click", function (){
     modalPuntos.style.display = "none"
+    logoutQ.style.display = "none"
+    logoutQContainer.style.display = "none" 
 });
 
 logOut.addEventListener("click", function (){
-    logoutQ.style.display = "block"
+    logoutQ.style.display = "flex"
+    logoutQContainer.style.display = "flex"
+    modalPuntos.style.display = "none"
 });
 
 xSalir.addEventListener("click", function () {
+    logoutQContainer.style.display = "none"
     logoutQ.style.display = "none"
     modalPuntos.style.display = "none"
 });

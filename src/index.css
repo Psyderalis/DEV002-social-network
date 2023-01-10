@@ -105,7 +105,8 @@ label {
 
 .loginBtn,
 .signUpBtn,
-.comenzarBtn {
+.comenzarBtn,
+.logoutBtn {
     width: 186px;
     height: 48px;
     background: #333652;
@@ -166,6 +167,9 @@ p {
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .head {
@@ -186,7 +190,9 @@ p {
     align-items: flex-end;
 }
 
-#puntos {
+#puntos,
+.modalPuntos,
+.xSalir {
     cursor: pointer;
 }
 
@@ -194,6 +200,8 @@ p {
     display: none;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 8vh;
     color: rgba(91, 91, 91, 1);
     height: 40px;
     width: 240px;
@@ -202,12 +210,6 @@ p {
     box-shadow: 3px 3px 3px rgb(175, 174, 174);
 }
 
-#mas {
-    margin-right: 10px;
-    cursor: pointer;
-    position: relative;
-
-}
 
 .logOut {
     display: flex;
@@ -220,12 +222,42 @@ p {
     font-size: 90%;
     margin: 0 10px 0 10px;
 }
-
+.logoutQContainer{
+    display: none;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(10px);
+}
 .logoutQ {
     display: none;
-    height: 50%;
-    width: 80%;
-    background-color: #90ADC6;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 25vh;
+    left: 15vw;
+    height: 50vh;
+    width: 70vw;
+    background-color: rgba(217, 217, 217, 1);
+    color: black;
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px rgb(175, 174, 174);
+  
+}
+
+.xSalir {
+    margin-top: 10%;
+}
+
+.Q {
+    margin-top: 30%;
+    font-size: larger;
+}
+
+.logoutBtn {
+    margin-top: 30%;
 }
 
 /* formulario para publicar */
@@ -299,7 +331,7 @@ p {
     /* background-color: aliceblue; */
     background-color: #e9eaec;
     height: auto;
-    padding: 10px 10px ;
+    padding: 10px 10px;
 }
 
 .linea {
@@ -389,6 +421,8 @@ ul:hover li {
     padding-bottom: 0px;
     position: relative;
     width: 100%;
+    position: sticky;
+    bottom: 0;
 }
 
 .divIconoHome {
