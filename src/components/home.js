@@ -33,7 +33,8 @@ export const Home = () => {
             </div>
             <div id="logoutQ" class="logoutQ">
                 <p id="xSalir" class="xSalir"> X </p>
-                ¿Quieres salir de Petsbook?
+                <p id="Q" class="Q"> ¿Quieres salir de Petsbook? </p>
+                <button id="logoutBtn" class="logoutBtn">Cerrar sesión</button>
             </div>
     `;
 div.innerHTML = templateHome;
@@ -52,10 +53,12 @@ puntos.addEventListener("click", function () {
 
 x.addEventListener("click", function (){
     modalPuntos.style.display = "none"
+    logoutQ.style.display = "none"
 });
 
 logOut.addEventListener("click", function (){
-    logoutQ.style.display = "block"
+    logoutQ.style.display = "flex"
+    modalPuntos.style.display = "none"
 });
 
 xSalir.addEventListener("click", function () {
