@@ -1,19 +1,11 @@
-// import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
-// import { async } from 'regenerator-runtime';
-// import { auth } from './firebase.js'; 
-// import './signupForm.js'
-
-// onAuthStateChanged(auth, async (user) => {
-//     console.log(user)
-// })
+import {  onNavigate  } from '../main.js'
 
 
-
-export const loginCheck = user => {
+export const loginCheck = (user) => {
     if (user) {
-        // para ocultar elementos en caso sea necesario(revisar uevamente el video)
+        onNavigate("/home");
 
     } else {
-
+        alert('Ingresa sesión')
     }
 }

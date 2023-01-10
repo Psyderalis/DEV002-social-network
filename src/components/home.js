@@ -72,6 +72,7 @@ export const Home = () => {
         logout()
         onNavigate("/");
         console.log('logout')
+
     });
 
     puntos.addEventListener("click", function () {
