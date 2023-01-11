@@ -4,7 +4,6 @@
 import { onNavigate } from '../main.js';
 import { signup } from '../app/signupForm.js';
 
-
 // Pantalla 2 - Registrate --------------------------------
 export const Register = () => {
   const div = document.createElement('div');
@@ -38,7 +37,6 @@ export const Register = () => {
 
   iniciar.addEventListener('click', () => {
     onNavigate('/');
-    
   });
 
   //   signUpBtn.addEventListener("click", (e) =>{
@@ -56,17 +54,5 @@ export const Register = () => {
     signup(signupEmail, signupPassword);
   });
 
-  const btnCrearCuenta=div.querySelector('#signUpBtn');
-  btnCrearCuenta.addEventListener('click', (e) => {
-    e.preventDefault()
-    localStorage.clear();
-    let valor = div.getElementById('signUpName').value;
-    //guardo el valor del nombre en el local storage con la clave 'épimoo' para que no se pierda
-    localStorage.setItem('épimoo', valor);
-  })
-
-
   return div;
-
-  
 };

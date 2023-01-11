@@ -1,7 +1,5 @@
 //import {credentials} from "../app/googleLogin.js" 
 import { onNavigate } from "../main.js";
-import "./logIn.js";
-import "./signUp.js"
 
 // Pantalla 3 - Bienvenida--------------------------------
 export const Welcome = () => {
@@ -10,8 +8,7 @@ export const Welcome = () => {
   div.id = "bienvenida";
   const Bienvenida = `
     <section class="presentacion" id="">
-      <p class="nombre-usuario" id="nombre-usuario"></p>
-      // ¡Hola Manchitas, tu cuenta ha sido creada con exito!
+      <p >¡Hola NOMBRE, tu cuenta ha sido creada con exito!</p>
       <div class="logo" id=""></div>
       <p >Recuerda que...</p>
       <p >Un mundo mejor es aquel donde
@@ -24,21 +21,10 @@ export const Welcome = () => {
       <button class="comenzarBtn" id="comenzarBtn">Comenzar</button>
     </section>
   `;
-  
-  //obtengo el valor del local storage
-  let nombreObtenido = localStorage.getItem('épimoo');
-
-  let cc = div.querySelector("#nombre-usuario");
-  cc.innerHTML = '¡Hola ' + nombreObtenido + ', tu cuenta ha sido creada con exito!';
- 
-
+  div.innerHTML = Bienvenida;
   const comenzarBtn = div.querySelector("#comenzarBtn");
   comenzarBtn.addEventListener("click", () => {
     onNavigate("/home");
   });
- div.innerHTML = Bienvenida;
-  
-
   return div;
-
 };
