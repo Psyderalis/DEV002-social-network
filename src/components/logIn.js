@@ -37,11 +37,13 @@ export const Login = () => {
 `;
   div.innerHTML = pantallaInicio;
   // ir a pantalla registrar y home
-
+  
   const loginBtn = div.querySelector("#loginBtn");
   const signinForm = div.querySelector('#login');
   const botonGoogle = div.querySelector('#loginGoogle');
   const registrate = div.querySelector("#registrate");
+  // const nombre = div.querySelector("#name-user").value;
+
 
   signinForm.addEventListener("submit", (e) => {
     e.preventDefault();

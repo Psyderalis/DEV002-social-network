@@ -2,12 +2,14 @@ import {
   deleteTask, getTask, onGetTasks, saveTask, updateTask,
 } from './firebase.js';
 
+// import { userState } from './firebase.js';
+
 export const homeE = (taskContainer, taskForm) => {
   let editando = false;
   let id = '';
 
   window.addEventListener('DOMContentLoaded', async () => {
-  // const querySnapshot = await getTasks();
+    // const querySnapshot = await getTasks();
 
     onGetTasks((querySnapshot) => {
       let divContain = '';
@@ -17,7 +19,7 @@ export const homeE = (taskContainer, taskForm) => {
         <section class="post">
         <div class="cabezaDePost">
         <img class="fotoDePerfil" src="imagenes/pug.jpg" alt='foto del usuario'>
-        <p class="nombreDeUsuario">Manchitas</p>
+        <p class="nombreDeUsuario"> Manchitas</p>
         <ul disabled selected class ="menu-horizontal" id="mas"><img src="imagenes/mas.png" width=30px height=30px>
          <div class="edit-delet">
          <li class='editar' data-id='${doc.id}'><img width=15px src="imagenes/editar.png"> Editar publicación</li>
@@ -38,6 +40,20 @@ export const homeE = (taskContainer, taskForm) => {
 
       });
       taskContainer.innerHTML = divContain;
+
+      // userState((user) => {
+      //   const divElemnt = document.querySelector('.post')
+      //   const nameUser = divElemnt.querySelector('.nombreDeUsuario')
+
+      //   if (user) {
+      //     const displayName = user.displayName;
+      //     const photoURL = user.photoURL;
+      //     nameUser.innerHTML = displayName;
+      //     // const photoUser.src = photoURL;
+      //     console.log(displayName, photoURL, nameUser)
+      //   }
+      // })
+
 
       const btnEliminar = taskContainer.querySelectorAll('.delete');
 
@@ -65,7 +81,7 @@ export const homeE = (taskContainer, taskForm) => {
   });
 
   taskForm.addEventListener('submit', (e) => {
-  // para no recargar la pag
+    // para no recargar la pag
     e.preventDefault();
 
     const description = taskForm.description;
