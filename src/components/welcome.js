@@ -23,8 +23,7 @@ export const Welcome = () => {
   div.id = "bienvenida";
   const Bienvenida = `
     <section class="presentacion" id="">
-      <p >¡Hola NOMBRE, tu cuenta ha sido creada con exito!</p>
-      <div class="logo" id=""></div>
+      <p id="hola-bienvenida"></p>
       <p >Recuerda que...</p>
       <p >Un mundo mejor es aquel donde
           todos los animales tienen amigos
@@ -36,7 +35,16 @@ export const Welcome = () => {
       <button class="comenzarBtn" id="comenzarBtn">Comenzar</button>
     </section>
   `;
+
   div.innerHTML = Bienvenida;
+   
+  const holaBienv=div.querySelector("#hola-bienvenida")
+  console.log(holaBienv)
+  //obtengo el valor del local storage
+  let nombreObtenido = localStorage.getItem('Nombre');
+
+  holaBienv.innerHTML ='¡Hola '+ nombreObtenido + ', tu cuenta ha sido creada con exito!' ;
+
   const comenzarBtn = div.querySelector("#comenzarBtn");
   comenzarBtn.addEventListener("click", () => {
     onNavigate("/home");

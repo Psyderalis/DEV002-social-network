@@ -53,7 +53,7 @@ export const Register = () => {
       const password = signupForm['signUpPassword'].value;
       console.log(email, password)
       signup(email, password);
-
+    
     // });
     console.log(':(')
 
