@@ -3,6 +3,9 @@
 
 import { onNavigate } from '../main.js';
 import { signup } from '../app/signupForm.js';
+import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
+import { auth } from '../app/firebase.js';
+
 
 // Pantalla 2 - Registrate --------------------------------
 export const Register = () => {
@@ -23,7 +26,7 @@ export const Register = () => {
             <input type="email" class="datosRegistro" id="signUpEmail" placeholder="Correo*" value="">
             <label for="signUpPassword">*Ingrese una contraseña mayor a 5 dígitos.</label>
             <input type="password" class="datosRegistro" id="signUpPassword" placeholder="Contraseña*" value="">
-            <button type="submit" class="signUpBtn" id="signUpBtn">Crear cuenta</button>
+            <button type="" class="signUpBtn" id="signUpBtn">Crear cuenta</button>
         </form>
         <section class="invitacion" id="invitacion">
             <p class="pregunta" id="preguntas">¿Ya tienes una cuenta?</p>
@@ -32,26 +35,50 @@ export const Register = () => {
     </section>
   `;
   div.innerHTML = pantallaRegistro;
-  // const signUpBtn = div.querySelector('#signUpBtn');
+  const signUpBtn = div.querySelector('#signUpBtn');
   const iniciar = div.querySelector('#iniciar');
 
   iniciar.addEventListener('click', () => {
     onNavigate('/');
   });
 
-  //   signUpBtn.addEventListener("click", (e) =>{
-  //     e.preventDefault();
-  //     onNavigate("/welcome");
-  //    });
 
-  // signup();
-  const signupForm = div.querySelector('#registro');
-
-  signupForm.addEventListener('submit', (e) => {
-    const signupEmail = signupForm.signUpEmail.value;
-    const signupPassword = signupForm.signUpPassword.value;
+  signUpBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    signup(signupEmail, signupPassword);
+    const signupForm = div.querySelector('#registro');
+
+    // // signupForm.addEventListener("submit", (e) => {
+    //   e.preventDefault()
+      const email = signupForm['signUpEmail'].value;
+      const password = signupForm['signUpPassword'].value;
+      console.log(email, password)
+      signup(email, password);
+
+    // });
+    console.log(':(')
+
+    localStorage.clear();
+
+    // obtengo el valor del input
+    let valor = div.querySelector('#signUpName').value;
+    console.log(valor)
+    // guardo el valor del nombre en el local storage con la clave 'épimoo' para que no se pierda
+    localStorage.setItem('Nombre', valor);
+
+    onAuthStateChanged(auth, async (user) => {
+      console.log('ónauth')
+      try {
+        console.log('try')
+        if (user) {
+          onNavigate("/bienvenida");
+          console.log('if')
+        }
+      } catch (error) {
+        console.log(error);
+        console.log('catch')
+      }
+    })
+
   });
 
   return div;

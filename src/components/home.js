@@ -1,12 +1,28 @@
 
-import { homeE } from '../app/home.js'; 
-//import { onNavigate } from '../main.js'; **
-
+import { homeE } from '../app/home.js';
+import { onNavigate } from "../main.js";
+import { logout } from '../app/logout.js'
 // Vista de Home de Petsbook
 
-
+import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
+import { auth } from '../app/firebase.js';
+// import { loginCheck } from '../app/loginCheck.js'
 
 export const Home = () => {
+
+    onAuthStateChanged(auth, async (user) => {
+
+        try {
+            if (!user) {
+                onNavigate("/");
+            }
+        } catch (error) {
+            console.log(error);
+        }
+
+    })
+
+    
 
     const div = document.createElement("div");
     div.className = "home";
@@ -15,6 +31,7 @@ export const Home = () => {
             <div id="cabeza">
                 <div class='head'><img id= "logoDeVistaHome" src="imagenes/Logo.png" width=50px>
                     <span id="etsbook">ETSBOOK</span>
+                    <p id="nomb-obte"></p>
                 </div>
                 <div class="menuArriba" id="menuArriba"> 
                     <img id="puntos" src="imagenes/mas.png" width=30px height=30px>
@@ -51,44 +68,58 @@ export const Home = () => {
 
     `;
 
-div.innerHTML = templateHome;
-const taskContainer = div.querySelector('#task-container');
-console.log(taskContainer)
-const taskForm = div.querySelector('#task-form');
-console.log(taskForm)
-homeE(taskContainer,taskForm);
+    div.innerHTML = templateHome;
+    const taskContainer = div.querySelector('#task-container');
+    console.log(taskContainer)
+    const taskForm = div.querySelector('#task-form');
+    console.log(taskForm)
+    homeE(taskContainer, taskForm);
 
-const xSalir = div.querySelector("#xSalir");
-const puntos = div.querySelector("#puntos");
-const modalPuntos = div.querySelector("#modalPuntos");
-const logOut = div.querySelector("#logOut")
-const x = div.querySelector("#x")
-const logoutQContainer = div.querySelector("#logoutQContainer")
+    const xSalir = div.querySelector("#xSalir");
+    const puntos = div.querySelector("#puntos");
+    const modalPuntos = div.querySelector("#modalPuntos");
+    const logOut = div.querySelector("#logOut");
+    const x = div.querySelector("#x");
+    const logoutQContainer = div.querySelector("#logoutQContainer");
+    const logoutQ = div.querySelector("#logoutQ");
+    const logoutBtn = div.querySelector('#logoutBtn');
+    const nombObte= div.querySelector('#nomb-obte');
 
-const logoutQ = div.querySelector("#logoutQ")
+    //obtengo el valor del local storage
+    let nombreObtenido = localStorage.getItem('Nombre');
+
+    nombObte.innerHTML ='Hola, ' + nombreObtenido;
 
 
-puntos.addEventListener("click", function () {
- modalPuntos.style.display = "flex"
-});
+    logoutBtn.addEventListener('click', () => {
+        // div.innerHTML = "";
+        logout()
+        onNavigate("/");
+        console.log('logout')
 
-x.addEventListener("click", function (){
-    modalPuntos.style.display = "none"
-    logoutQ.style.display = "none"
-    logoutQContainer.style.display = "none" 
-});
+    });
 
-logOut.addEventListener("click", function (){
-    logoutQ.style.display = "flex"
-    logoutQContainer.style.display = "flex"
-    modalPuntos.style.display = "none"
-});
+    puntos.addEventListener("click", function () {
+        modalPuntos.style.display = "flex"
+    });
 
-xSalir.addEventListener("click", function () {
-    logoutQContainer.style.display = "none"
-    logoutQ.style.display = "none"
-    modalPuntos.style.display = "none"
-});
+    x.addEventListener("click", function () {
+        modalPuntos.style.display = "none"
+        logoutQ.style.display = "none"
+        logoutQContainer.style.display = "none"
+    });
+
+    logOut.addEventListener("click", function () {
+        logoutQ.style.display = "flex"
+        logoutQContainer.style.display = "flex"
+        modalPuntos.style.display = "none"
+    });
+
+    xSalir.addEventListener("click", function () {
+        logoutQContainer.style.display = "none"
+        logoutQ.style.display = "none"
+        modalPuntos.style.display = "none"
+    });
     return div;
 };
 

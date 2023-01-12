@@ -1,8 +1,23 @@
 //import {credentials} from "../app/googleLogin.js" 
 import { onNavigate } from "../main.js";
+import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
+import { auth } from '../app/firebase.js';
 
 // Pantalla 3 - Bienvenida--------------------------------
 export const Welcome = () => {
+
+  onAuthStateChanged(auth, async (user) => {
+
+    try {
+        if (!user) {
+            onNavigate("/registro");
+        }
+    } catch (error) {
+        console.log(error);
+    }
+
+})
+
   const div = document.createElement("div");
   div.className = "pantalla";
   div.id = "bienvenida";

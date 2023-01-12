@@ -181,6 +181,7 @@ p {
 #etsbook {
     margin-left: 3px;
     font-weight: bold;
+    padding-right: 10px;
 }
 
 .menuArriba {
@@ -370,8 +371,6 @@ div.publicacion {
 
 .delete,
 .editar {
-    /* background-color: #333652; */
-    /* color: aliceblue; */
     padding: 7px 5px;
     cursor: pointer;
     display: none;
@@ -379,6 +378,7 @@ div.publicacion {
 
 .delete {
     border-radius: 0px 0px 10px 10px;
+
 }
 
 .editar {

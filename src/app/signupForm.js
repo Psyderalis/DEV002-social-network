@@ -3,12 +3,12 @@
 /* eslint-disable no-console */
 import { createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
 import { auth } from './firebase.js';
-
+console.log('algooooo')
 export async function signup(email, password) {
   console.log('funciona SignUp');
   try {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    console.log(userCredential);
+    await createUserWithEmailAndPassword(auth, email, password)
+   
   } catch (error) {
     console.log(error.message);
     console.log(error.code);

@@ -1,7 +1,11 @@
 import { googleLog } from '../app/googleLogin.js';
 import { login } from '../app/signin.js';
 import { onNavigate } from '../main.js';
+// import { loginCheck } from '../app/loginCheck.js'
 
+import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
+import { auth } from '../app/firebase.js';
+import './home.js';
 // //Pantalla 1 - Inicio de sesión---------------------------
 
 export const Login = () => {
@@ -34,10 +38,12 @@ export const Login = () => {
   div.innerHTML = pantallaInicio;
   // ir a pantalla registrar y home
 
-  //const loginBtn = div.querySelector("#loginBtn");
+  const loginBtn = div.querySelector("#loginBtn");
   const signinForm = div.querySelector('#login');
   const botonGoogle = div.querySelector('#loginGoogle');
   const registrate = div.querySelector("#registrate");
+  // const nombre = div.querySelector("#name-user").value;
+
 
   signinForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -54,6 +60,21 @@ export const Login = () => {
 
   registrate.addEventListener("click", () => {
     onNavigate("/registro");
+  });
+
+  loginBtn.addEventListener('click', () => {
+
+    onAuthStateChanged(auth, async (user) => {
+
+      try {
+        if (user) {
+          onNavigate("/home");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+
+    })
   });
 
   return div;

@@ -1,7 +1,16 @@
-// export const loginCheck = user => {
-// if(user) {
-// // para ocultar elementos en caso sea necesario(revisar uevamente el video)
+// import {  onNavigate  } from '../main.js'
 
-//     }else{
+// import { async } from "regenerator-runtime";
 
-//     }
+
+// export const loginCheck = async (user) => {
+//     try {
+//         if (!user) {
+//             onNavigate("/");
+//         }else {
+//             alert('Ingresa sesión')
+//         }
+//       } catch (error) {
+//         console.log(error);
+//       }
+// }
