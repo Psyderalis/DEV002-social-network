@@ -4,9 +4,25 @@ import { onNavigate } from "../main.js";
 import { logout } from '../app/logout.js'
 // Vista de Home de Petsbook
 
-
+import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
+import { auth } from '../app/firebase.js';
+// import { loginCheck } from '../app/loginCheck.js'
 
 export const Home = () => {
+
+    onAuthStateChanged(auth, async (user) => {
+
+        try {
+            if (!user) {
+                onNavigate("/");
+            }
+        } catch (error) {
+            console.log(error);
+        }
+
+    })
+
+    
 
     const div = document.createElement("div");
     div.className = "home";
@@ -15,6 +31,7 @@ export const Home = () => {
             <div id="cabeza">
                 <div class='head'><img id= "logoDeVistaHome" src="imagenes/Logo.png" width=50px>
                     <span id="etsbook">ETSBOOK</span>
+                    <p id="nomb-obte"></p>
                 </div>
                 <div class="menuArriba" id="menuArriba"> 
                     <img id="puntos" src="imagenes/mas.png" width=30px height=30px>
@@ -61,11 +78,18 @@ export const Home = () => {
     const xSalir = div.querySelector("#xSalir");
     const puntos = div.querySelector("#puntos");
     const modalPuntos = div.querySelector("#modalPuntos");
-    const logOut = div.querySelector("#logOut")
-    const x = div.querySelector("#x")
-    const logoutQContainer = div.querySelector("#logoutQContainer")
-    const logoutQ = div.querySelector("#logoutQ")
-    const logoutBtn = div.querySelector('#logoutBtn')
+    const logOut = div.querySelector("#logOut");
+    const x = div.querySelector("#x");
+    const logoutQContainer = div.querySelector("#logoutQContainer");
+    const logoutQ = div.querySelector("#logoutQ");
+    const logoutBtn = div.querySelector('#logoutBtn');
+    const nombObte= div.querySelector('#nomb-obte');
+
+    //obtengo el valor del local storage
+    let nombreObtenido = localStorage.getItem('Nombre');
+
+    nombObte.innerHTML ='Hola, ' + nombreObtenido;
+
 
     logoutBtn.addEventListener('click', () => {
         // div.innerHTML = "";
