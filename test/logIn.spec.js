@@ -1,3 +1,11 @@
+/* eslint-disable no-console */
+/* eslint-disable no-shadow */
+/* eslint-disable arrow-body-style */
+/* eslint-disable object-curly-newline */
+/* eslint-disable semi */
+/* eslint-disable indent */
+/* eslint-disable object-curly-spacing */
+/* eslint-disable import/no-unresolved */
 // Test para SignUp
 import { signup } from '../src/app/signupForm.js';
 import { auth, createUserWithEmailAndPassword } from '../src/app/firebase.js';
