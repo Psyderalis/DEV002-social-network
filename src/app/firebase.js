@@ -7,7 +7,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
 import {
   getFirestore,
   collection,
@@ -33,7 +33,7 @@ import {
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-
+export { createUserWithEmailAndPassword };
 // firestore
 export const conFirestore = getFirestore();
 export const saveTask = (description) => {

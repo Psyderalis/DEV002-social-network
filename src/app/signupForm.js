@@ -1,8 +1,8 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable no-alert */
 /* eslint-disable no-console */
-import { createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
-import { auth } from './firebase.js';
+// import { createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
+import { auth, createUserWithEmailAndPassword } from './firebase.js';
 
 console.log('algooooo');
 export async function signup(email, password) {
