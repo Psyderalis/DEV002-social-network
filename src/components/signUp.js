@@ -1,11 +1,12 @@
+/* eslint-disable no-console */
+/* eslint-disable import/no-unresolved */
 /* eslint-disable import/no-cycle */
 // import { signup } from '../app/signupForm.js'; **
 
+import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
 import { onNavigate } from '../main.js';
 import { signup } from '../app/signupForm.js';
-import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
 import { auth } from '../app/firebase.js';
-
 
 // Pantalla 2 - Registrate --------------------------------
 export const Register = () => {
@@ -42,43 +43,41 @@ export const Register = () => {
     onNavigate('/');
   });
 
-
-  signUpBtn.addEventListener("click", (e) => {
+  signUpBtn.addEventListener('click', (e) => {
     e.preventDefault();
     const signupForm = div.querySelector('#registro');
 
     // // signupForm.addEventListener("submit", (e) => {
     //   e.preventDefault()
-      const email = signupForm['signUpEmail'].value;
-      const password = signupForm['signUpPassword'].value;
-      console.log(email, password)
-      signup(email, password);
-    
+    const email = signupForm.signUpEmail.value;
+    const password = signupForm.signUpPassword.value;
+    console.log(email, password);
+    signup(email, password);
+
     // });
-    console.log(':(')
+    console.log(':(');
 
     localStorage.clear();
 
     // obtengo el valor del input
-    let valor = div.querySelector('#signUpName').value;
-    console.log(valor)
+    const valor = div.querySelector('#signUpName').value;
+    console.log(valor);
     // guardo el valor del nombre en el local storage con la clave 'épimoo' para que no se pierda
     localStorage.setItem('Nombre', valor);
 
     onAuthStateChanged(auth, async (user) => {
-      console.log('ónauth')
+      console.log('ónauth');
       try {
-        console.log('try')
+        console.log('try');
         if (user) {
-          onNavigate("/bienvenida");
-          console.log('if')
+          onNavigate('/bienvenida');
+          console.log('if');
         }
       } catch (error) {
         console.log(error);
-        console.log('catch')
+        console.log('catch');
       }
-    })
-
+    });
   });
 
   return div;

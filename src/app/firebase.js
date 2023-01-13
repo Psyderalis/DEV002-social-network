@@ -7,7 +7,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-import { getAuth, onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
+import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
 import {
   getFirestore,
   collection,
@@ -54,4 +54,3 @@ export const updateTask = (id, nuevosCampos) => {
 };
 
 export const userState = (user) => onAuthStateChanged(auth, (user));
-
