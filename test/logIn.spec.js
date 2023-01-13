@@ -26,18 +26,18 @@ jest.mock('../src/app/firebase.js', () => {
 describe('Tests para signup', () => {
   const email = 'petsbook@gmail.com';
   const passw = '1234567';
-  it('Llamar createUserWithEmailAndPassword', async () => {
+  it('Debería poder llamar a createUserWithEmailAndPassword', async () => {
     await signup(email, passw);
     // console.log(x);
     // console.log(createUserWithEmailAndPassword.mock);
     // Para ver si durante la ejecucion de signup se invocó el createUser..
     expect(createUserWithEmailAndPassword).toHaveBeenCalled();
   });
-  it('Llamar createUserWithEmailAndPassword con sus parametros', async () => {
+  it('Debería llamar a createUserWithEmailAndPassword con sus parametros', async () => {
     await signup(email, passw);
     expect(createUserWithEmailAndPassword).toHaveBeenCalledWith(auth, email, passw)
   });
-  it('Llamar el error si sus parametros están vacios', async () => {
+  it('Debería llamar al error si sus parametros están vacios', async () => {
     try {
       await signup()
     } catch (error) {
@@ -47,11 +47,11 @@ describe('Tests para signup', () => {
   it('signup debería ser una funcion', () => {
     expect(typeof signup).toBe('function')
   });
-  it('Ver el email', async () => {
+  it('Debería recibir el email', async () => {
     await signup(email, passw);
     expect(createUserWithEmailAndPassword.mock.calls[0][1]).toBe('petsbook@gmail.com')
   });
-  it('Ver el password', async () => {
+  it('Debería recibir el password', async () => {
     await signup(email, passw);
     expect(createUserWithEmailAndPassword.mock.calls[0][2]).toBe('1234567')
   })

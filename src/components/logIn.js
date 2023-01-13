@@ -1,13 +1,13 @@
 /* eslint-disable no-console */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/no-cycle */
-import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
+// import {  } from '../app/firebase.js';
 import { googleLog } from '../app/googleLogin.js';
 import { login } from '../app/signin.js';
 import { onNavigate } from '../main.js';
 // import { loginCheck } from '../app/loginCheck.js'
 
-import { auth } from '../app/firebase.js';
+import { onAuthStateChanged, auth } from '../app/firebase.js';
 import './home.js';
 // //Pantalla 1 - Inicio de sesión---------------------------
 

@@ -2,9 +2,9 @@
 /* eslint-disable import/no-cycle */
 /* eslint-disable import/no-unresolved */
 // import {credentials} from "../app/googleLogin.js"
-import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
+// import {  } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
 import { onNavigate } from '../main.js';
-import { auth } from '../app/firebase.js';
+import { auth, onAuthStateChanged } from '../app/firebase.js';
 
 // Pantalla 3 - Bienvenida--------------------------------
 export const Welcome = () => {

@@ -7,7 +7,15 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signOut,
+  signInWithEmailAndPassword,
+} from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
 import {
   getFirestore,
   collection,
@@ -33,7 +41,14 @@ import {
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+// SignUpForm
 export { createUserWithEmailAndPassword };
+// GoogleLogin
+export { GoogleAuthProvider, signInWithPopup };
+// logOut
+export { signOut };
+// signin
+export { signInWithEmailAndPassword };
 // firestore
 export const conFirestore = getFirestore();
 export const saveTask = (description) => {
@@ -54,3 +69,6 @@ export const updateTask = (id, nuevosCampos) => {
 };
 
 export const userState = (user) => onAuthStateChanged(auth, (user));
+
+// observador
+export { onAuthStateChanged };

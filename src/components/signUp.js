@@ -3,10 +3,10 @@
 /* eslint-disable import/no-cycle */
 // import { signup } from '../app/signupForm.js'; **
 
-import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
+// import {  } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
 import { onNavigate } from '../main.js';
 import { signup } from '../app/signupForm.js';
-import { auth } from '../app/firebase.js';
+import { auth, onAuthStateChanged } from '../app/firebase.js';
 
 // Pantalla 2 - Registrate --------------------------------
 export const Register = () => {
