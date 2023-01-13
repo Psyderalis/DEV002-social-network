@@ -44,11 +44,11 @@ body {
 
 /* --------Bienvenida---------------- */
 
-#bienvenida {
+ #bienvenida {
     color: rgba(233, 234, 236, 1);
     line-height: 2;
 }
-
+/*
 #bienvenida .logo {
     margin: 20px;
 }
@@ -56,10 +56,10 @@ body {
 #bienvenida p {
     width: 70%;
 }
-
-#bienvenida .frase {
+*/
+.frase {
     font-weight: bolder;
-}
+} 
 
 
 
@@ -419,7 +419,7 @@ ul:hover li {
     flex-direction: row;
     padding-top: 10px;
     padding-bottom: 0px;
-    position: relative;
+    /* position: relative; */
     width: 100%;
     position: sticky;
     bottom: 0;
