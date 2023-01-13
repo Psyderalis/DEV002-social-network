@@ -2,9 +2,9 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/no-cycle */
 // import {  } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
-import { homeE } from '../app/home.js';
+import { homeE, logout } from '../app/home.js';
 import { onNavigate } from '../main.js';
-import { logout } from '../app/logout.js';
+//import { logout } from '../app/logout.js';
 // Vista de Home de Petsbook
 
 import { auth, onAuthStateChanged } from '../app/firebase.js';

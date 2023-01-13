@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 import {
-  deleteTask, getTask, onGetTasks, saveTask, updateTask,
+  deleteTask, getTask, onGetTasks, saveTask, updateTask, signOut, auth
 } from './firebase.js';
 
 // import { userState } from './firebase.js';
@@ -98,4 +98,11 @@ export const homeE = (taskContainer, taskForm) => {
 
     taskForm.reset();
   });
+};
+
+//--------------LogOut------------------------
+
+export const logout = () => {
+  signOut(auth);
+  console.log('signOut');
 };

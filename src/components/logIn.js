@@ -2,8 +2,9 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/no-cycle */
 // import {  } from '../app/firebase.js';
-import { googleLog } from '../app/googleLogin.js';
-import { login } from '../app/signin.js';
+
+//import { googleLog } from '../app/googleLogin.js';
+import { login, googleLog } from '../app/signin.js';
 import { onNavigate } from '../main.js';
 // import { loginCheck } from '../app/loginCheck.js'
 
