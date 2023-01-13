@@ -51,6 +51,7 @@ export { signOut };
 export { signInWithEmailAndPassword };
 // firestore
 export const conFirestore = getFirestore();
+
 export const saveTask = (description) => {
     console.log(description);
     addDoc(collection(conFirestore, 'tasks'), { description });
@@ -68,7 +69,7 @@ export const updateTask = (id, nuevosCampos) => {
     updateDoc(doc(conFirestore, 'tasks', id), nuevosCampos);
 };
 
-export const userState = (user) => onAuthStateChanged(auth, (user));
+// export const userState = (user) => onAuthStateChanged(auth, (user));
 
 // observador
 export { onAuthStateChanged };

@@ -1,7 +1,8 @@
 /* eslint-disable no-param-reassign */
 import {
-  deleteTask, getTask, onGetTasks, saveTask, updateTask, signOut, auth
+  deleteTask, getTask, onGetTasks, saveTask, updateTask, auth, signOut
 } from './firebase.js';
+import { postTemplate } from '../components/post.js';
 
 // import { userState } from './firebase.js';
 
@@ -16,44 +17,34 @@ export const homeE = (taskContainer, taskForm) => {
       let divContain = '';
       querySnapshot.forEach((doc) => {
         const task = doc.data();
-        divContain += `
-        <section class="post">
-        <div class="cabezaDePost">
-        <img class="fotoDePerfil" src="imagenes/pug.jpg" alt='foto del usuario'>
-        <p class="nombreDeUsuario"> Manchitas</p>
-        <ul disabled selected class ="menu-horizontal" id="mas"><img src="imagenes/mas.png" width=30px height=30px>
-         <div class="edit-delet">
-         <li class='editar' data-id='${doc.id}'><img width=15px src="imagenes/editar.png"> Editar publicación</li>
-         <li class='delete' data-id='${doc.id}'><img width=15px src="imagenes/eliminar.png"> Eliminar </li>
+        console.log(doc.id);
+         divContain += `
+         <section class="post">
+         <div class="cabezaDePost">
+         <img class="fotoDePerfil" src="imagenes/pug.jpg" alt='foto del usuario'>
+         <p class="nombreDeUsuario"> Manchitas</p>
+         <ul disabled selected class ="menu-horizontal" id="mas"><img src="imagenes/mas.png" width=30px height=30px>
+          <div class="edit-delet">
+          <li class='editar' data-id='${doc.id}'><img width=15px src="imagenes/editar.png"> Editar publicación</li>
+          <li class='delete' data-id='${doc.id}'><img width=15px src="imagenes/eliminar.png"> Eliminar </li>
+          </div>
+         </ul>
          </div>
-        </ul>
-        </div>
-        <div class="cuerpoDePost" >
-        <p class="contenidoP"> ${task.description} </p> 
-        </div>
-        <div  class="linea"></div>
-        <div class="footerDePost">
-        <img src="imagenes/huella.png" width=30px>
-        <p>1 Me encanta</p>
-        </div>
-        </section>  
-        `;
+         <div class="cuerpoDePost" >
+         <p class="contenidoP"> ${task.description} </p> 
+         </div>
+         <div  class="linea"></div>
+         <div class="footerDePost">
+         <img src="imagenes/huella.png" width=30px>
+         <p>1 Me encanta</p>
+         </div>
+         </section>  
+         `;
+        
       });
       taskContainer.innerHTML = divContain;
 
-      // userState((user) => {
-      //   const divElemnt = document.querySelector('.post')
-      //   const nameUser = divElemnt.querySelector('.nombreDeUsuario')
-
-      //   if (user) {
-      //     const displayName = user.displayName;
-      //     const photoURL = user.photoURL;
-      //     nameUser.innerHTML = displayName;
-      //     // const photoUser.src = photoURL;
-      //     console.log(displayName, photoURL, nameUser)
-      //   }
-      // })
-
+    
       const btnEliminar = taskContainer.querySelectorAll('.delete');
 
       btnEliminar.forEach((btn) => {

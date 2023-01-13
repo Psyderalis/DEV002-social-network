@@ -4,11 +4,9 @@
 // import {  } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
 import { homeE, logout } from '../app/home.js';
 import { onNavigate } from '../main.js';
-//import { logout } from '../app/logout.js';
-// Vista de Home de Petsbook
-
 import { auth, onAuthStateChanged } from '../app/firebase.js';
-// import { loginCheck } from '../app/loginCheck.js'
+
+// Vista de Home de Petsbook
 
 export const Home = () => {
   onAuthStateChanged(auth, async (user) => {
