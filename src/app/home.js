@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import {
   deleteTask, getTask, onGetTasks, saveTask, updateTask,
 } from './firebase.js';
@@ -37,7 +38,6 @@ export const homeE = (taskContainer, taskForm) => {
         </div>
         </section>  
         `;
-
       });
       taskContainer.innerHTML = divContain;
 
@@ -53,7 +53,6 @@ export const homeE = (taskContainer, taskForm) => {
       //     console.log(displayName, photoURL, nameUser)
       //   }
       // })
-
 
       const btnEliminar = taskContainer.querySelectorAll('.delete');
 

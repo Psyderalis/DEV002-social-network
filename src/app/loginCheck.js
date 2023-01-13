@@ -2,7 +2,6 @@
 
 // import { async } from "regenerator-runtime";
 
-
 // export const loginCheck = async (user) => {
 //     try {
 //         if (!user) {

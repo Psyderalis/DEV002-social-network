@@ -6,6 +6,6 @@ import { signOut } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth
 import { auth } from "./firebase.js";
 
 export const logout = () => {
-   signOut(auth);
+  signOut(auth);
   console.log('signOut');
-}
+};
