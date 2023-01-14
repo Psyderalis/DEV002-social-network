@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-console */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/no-cycle */
@@ -6,36 +7,37 @@
 // import {  } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
 import { onNavigate } from '../main.js';
 import { signup } from '../app/signupForm.js';
-import { auth, onAuthStateChanged } from '../app/firebase.js';
+import { auth, onAuthStateChanged } from '../app/config.js';
+import { templateRegister } from '../Templates/signUp.js';
 
 // Pantalla 2 - Registrate --------------------------------
 export const Register = () => {
   const div = document.createElement('div');
   div.className = 'pantalla';
   div.id = 'inicio';
-  const pantallaRegistro = `
-    <section class="presentacion" id="">
-        <div class="logo" id=""></div>
-        <div class="nombre" id="">PETSBOOK</div>
-        <p class="frase" id="frase">Un mundo para tu mascota</p>
-    </section>
-    <section class= 'pantallaCompu'>
-        <form class="registro" id="registro">
-            <label for="signUpName">*Ingrese el nombre de su mascota.</label>
-            <input type="text" class="datosRegistro" id="signUpName" placeholder="Nombre*" value="">
-            <label for="signUpEmail">*Ingrese un correo existente.</label>
-            <input type="email" class="datosRegistro" id="signUpEmail" placeholder="Correo*" value="">
-            <label for="signUpPassword">*Ingrese una contraseña mayor a 5 dígitos.</label>
-            <input type="password" class="datosRegistro" id="signUpPassword" placeholder="Contraseña*" value="">
-            <button type="" class="signUpBtn" id="signUpBtn">Crear cuenta</button>
-        </form>
-        <section class="invitacion" id="invitacion">
-            <p class="pregunta" id="preguntas">¿Ya tienes una cuenta?</p>
-            <div class="iniciar" id="iniciar">Inicia Sesión</div>
-        </section>
-    </section>
-  `;
-  div.innerHTML = pantallaRegistro;
+  // const pantallaRegistro = `
+  //   <section class="presentacion" id="">
+  //       <div class="logo" id=""></div>
+  //       <div class="nombre" id="">PETSBOOK</div>
+  //       <p class="frase" id="frase">Un mundo para tu mascota</p>
+  //   </section>
+  //   <section class= 'pantallaCompu'>
+  //       <form class="registro" id="registro">
+  //           <label for="signUpName">*Ingrese el nombre de su mascota.</label>
+  //           <input type="text" class="datosRegistro" id="signUpName" placeholder="Nombre*" value="">
+  //           <label for="signUpEmail">*Ingrese un correo existente.</label>
+  //           <input type="email" class="datosRegistro" id="signUpEmail" placeholder="Correo*" value="">
+  //           <label for="signUpPassword">*Ingrese una contraseña mayor a 5 dígitos.</label>
+  //           <input type="password" class="datosRegistro" id="signUpPassword" placeholder="Contraseña*" value="">
+  //           <button type="" class="signUpBtn" id="signUpBtn">Crear cuenta</button>
+  //       </form>
+  //       <section class="invitacion" id="invitacion">
+  //           <p class="pregunta" id="preguntas">¿Ya tienes una cuenta?</p>
+  //           <div class="iniciar" id="iniciar">Inicia Sesión</div>
+  //       </section>
+  //   </section>
+  // `;
+  div.innerHTML = templateRegister;
   const signUpBtn = div.querySelector('#signUpBtn');
   const iniciar = div.querySelector('#iniciar');
 

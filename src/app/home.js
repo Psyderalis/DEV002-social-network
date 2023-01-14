@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import {
   deleteTask, getTask, onGetTasks, saveTask, updateTask,
-} from './firebase.js';
+} from './firestore.js';
 
 // import { userState } from './firebase.js';
 

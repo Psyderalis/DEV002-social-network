@@ -2,7 +2,7 @@
 /* eslint-disable import/no-unresolved */
 // import { async } from 'regenerator-runtime';
 // import {  } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
-import { GoogleAuthProvider, signInWithPopup, auth } from './firebase.js';
+import { GoogleAuthProvider, signInWithPopup, auth } from './config.js';
 
 export const googleLog = async () => {
   const provider = new GoogleAuthProvider();

@@ -10,10 +10,10 @@ import { myFunction } from './lib/index.js';
 // import welcome from './components/welcome.js';
 // import home from './components/home.js';
 
-import { Login } from './components/logIn.js';
-import { Welcome } from './components/welcome.js';
-import { Register } from './components/signUp.js';
-import { Home } from './components/home.js';
+import { Login } from './DOM/logIn.js';
+import { Welcome } from './DOM/welcome.js';
+import { Register } from './DOM/signUp.js';
+import { Home } from './DOM/home.js';
 
 myFunction();
 
