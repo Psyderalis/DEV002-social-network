@@ -5,11 +5,9 @@
 // import {  } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
 import { homeE } from '../app/home.js';
 import { onNavigate } from '../main.js';
-import { logout } from '../app/logout.js';
+import { auth, onAuthStateChanged, logout } from '../app/auth.js';
 import { templateHome } from '../Templates/home.js';
 // Vista de Home de Petsbook
-
-import { auth, onAuthStateChanged } from '../app/config.js';
 // import { loginCheck } from '../app/loginCheck.js'
 
 export const Home = () => {
@@ -92,6 +90,7 @@ export const Home = () => {
   logoutBtn.addEventListener('click', () => {
     // div.innerHTML = "";
     logout();
+    localStorage.clear();
     onNavigate('/');
     console.log('logout');
   });

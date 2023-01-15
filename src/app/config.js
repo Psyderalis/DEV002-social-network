@@ -40,7 +40,7 @@ const providerGoogle = new GoogleAuthProvider(app);
 // firestore
 const conFirestore = getFirestore();
 
-// para Firebase
+// para Firebase (auth.js)
 export {
   app,
   auth,
@@ -52,7 +52,7 @@ export {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
 };
-// para Firestore
+// para Firestore (firestore.js)
 export {
   conFirestore,
   collection,

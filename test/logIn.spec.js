@@ -8,9 +8,9 @@
 /* eslint-disable import/no-unresolved */
 // Test para SignUp
 import { signup } from '../src/app/signupForm.js';
-import { auth, createUserWithEmailAndPassword } from '../src/app/firebase.js';
+import { auth, createUserWithEmailAndPassword } from '../src/app/config.js';
 
-jest.mock('../src/app/firebase.js', () => {
+jest.mock('../src/app/config.js', () => {
   return {
     auth: jest.fn(() => ({ auth: 'test' })),
     createUserWithEmailAndPassword: jest.fn((auth, email, password) => {

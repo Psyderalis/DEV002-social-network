@@ -1,25 +1,44 @@
-// import {
-//   auth,
-//   app,
-//   createUserWithEmailAndPassword,
-//   onAuthStateChanged,
-//   providerGoogle,
-//   signInWithPopup,
-//   signOut,
-//   signInWithEmailAndPassword,
-// } from './config.js';
+import {
+  auth,
+  app,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  providerGoogle,
+  signInWithPopup,
+  signOut,
+  signInWithEmailAndPassword,
+} from './config.js';
 
-// const login = (email, password) => signInWithEmailAndPassword(auth, email, password);
-// const googleLog = () => signInWithPopup(auth, providerGoogle);
-// const signup = (email, password) => createUserWithEmailAndPassword(auth, email, password);
-// const logout = () => signOut(auth);
-// const userState = (callback) => onAuthStateChanged(auth, callback);
+// para logIn
+const login = (email, password) => signInWithEmailAndPassword(auth, email, password);
 
-// export {
-//   app,
-//   login,
-//   googleLog,
-//   signup,
-//   logout,
-//   userState,
-// };
+// export const login = async (email, password) => {
+//   try {
+//     const credentials = await signInWithEmailAndPassword(auth, email, password);
+//     console.log(credentials);
+//     console.log('También hace el try :)');
+//   } catch (error) {
+//     console.log(error);
+//   }
+
+const googleLog = () => signInWithPopup(auth, providerGoogle);
+// para signUp
+const signup = (email, password) => createUserWithEmailAndPassword(auth, email, password);
+// para Home
+const logout = () => signOut(auth);
+
+// el observador
+const userState = (callback) => onAuthStateChanged(auth, callback);
+
+const user1 = auth.currentUser;
+export {
+  auth,
+  app,
+  login,
+  googleLog,
+  signup,
+  logout,
+  userState,
+  onAuthStateChanged,
+  user1,
+};

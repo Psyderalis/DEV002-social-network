@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* eslint-disable max-len */
 /* eslint-disable no-console */
 /* eslint-disable import/no-unresolved */
@@ -6,8 +7,8 @@
 
 // import {  } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
 import { onNavigate } from '../main.js';
-import { signup } from '../app/signupForm.js';
-import { auth, onAuthStateChanged } from '../app/config.js';
+import { auth, onAuthStateChanged, signup } from '../app/auth.js';
+// import { } from '../app/config.js';
 import { templateRegister } from '../Templates/signUp.js';
 
 // Pantalla 2 - Registrate --------------------------------
@@ -54,12 +55,28 @@ export const Register = () => {
     const email = signupForm.signUpEmail.value;
     const password = signupForm.signUpPassword.value;
     console.log(email, password);
-    signup(email, password);
+    // signup(email, password);
+    signup(email, password)
+    // .then(() => {
+      //   // div.querySelector('#signUpEmail').value = '';
+      //   // div.querySelector('#signUpPassword').value = '';
+      // })
+      .catch((error) => {
+        console.log(error.message);
+        console.log(error.code);
 
-    // });
+        if (error.code === 'auth/email-already-in-use') {
+          alert('Este correo ya está en uso');
+        } else if (error.code === 'auth/weak-password') {
+          alert('Tu contraseña es muy débil');
+        } else if (error.code === 'auth/invalid-email') {
+          alert('Este correo es inválido');
+        }
+      });
+
     console.log(':(');
 
-    localStorage.clear();
+    // localStorage.clear();
 
     // obtengo el valor del input
     const valor = div.querySelector('#signUpName').value;
