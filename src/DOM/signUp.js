@@ -57,10 +57,10 @@ export const Register = () => {
     console.log(email, password);
     // signup(email, password);
     signup(email, password)
-    // .then(() => {
-      //   // div.querySelector('#signUpEmail').value = '';
-      //   // div.querySelector('#signUpPassword').value = '';
-      // })
+      .then(() => {
+        div.querySelector('#signUpEmail').value = '';
+        div.querySelector('#signUpPassword').value = '';
+      })
       .catch((error) => {
         console.log(error.message);
         console.log(error.code);

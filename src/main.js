@@ -2,7 +2,6 @@
 // Para el DOM-
 // Este es el punto de entrada de tu aplicacion
 
-import { myFunction } from './lib/index.js';
 //------------------------------------------------------
 
 // import logIn from './components/logIn.js';
@@ -14,8 +13,6 @@ import { Login } from './DOM/logIn.js';
 import { Welcome } from './DOM/welcome.js';
 import { Register } from './DOM/signUp.js';
 import { Home } from './DOM/home.js';
-
-myFunction();
 
 // export const mainApp = document.getElementById('app');
 const root = document.getElementById('root');
