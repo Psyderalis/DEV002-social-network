@@ -65,7 +65,9 @@ import {
 
 export const saveTask = (description) => {
     console.log(description);
-    addDoc(collection(conFirestore, 'tasks'), { description });
+    addDoc(collection(conFirestore, 'tasks'), { 
+        description,
+    });
 };
 
 export const getTasks = () => getDocs(collection(conFirestore, 'tasks'));
@@ -79,6 +81,17 @@ export const getTask = (id) => getDoc(doc(conFirestore, 'tasks', id));
 export const updateTask = (id, nuevosCampos) => {
     updateDoc(doc(conFirestore, 'tasks', id), nuevosCampos);
 };
+
+//-----LIKES----------------------
+export const giveLike = () => {
+  addDoc(collection(conFirestore, "likes"), {
+    uid: "",
+    like: true,
+  })
+};
+
+
+
 
 // observador
 // export { onAuthStateChanged };

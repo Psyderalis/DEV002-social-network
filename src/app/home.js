@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 import {
-  deleteTask, getTask, onGetTasks, saveTask, updateTask,
+  deleteTask, getTask, onGetTasks, saveTask, updateTask, giveLike
 } from './firestore.js';
 
 // import { userState } from './firebase.js';
@@ -33,7 +33,7 @@ export const homeE = (taskContainer, taskForm) => {
         </div>
         <div  class="linea"></div>
         <div class="footerDePost">
-        <img src="imagenes/huella.png" width=30px>
+        <img class="like" data-id="${doc.id}" src="imagenes/dislike.png" width=30px>
         <p>1 Me encanta</p>
         </div>
         </section>  
@@ -53,6 +53,14 @@ export const homeE = (taskContainer, taskForm) => {
       //     console.log(displayName, photoURL, nameUser)
       //   }
       // })
+      const likeBtn = taskContainer.querySelectorAll('.like');
+
+      likeBtn.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          giveLike(e.target.dataset.id);
+          btn.src="imagenes/like.png";
+        });
+      });
 
       const btnEliminar = taskContainer.querySelectorAll('.delete');
 
