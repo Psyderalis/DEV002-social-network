@@ -28,9 +28,10 @@ const signup = (email, password) => createUserWithEmailAndPassword(auth, email, 
 const logout = () => signOut(auth);
 
 // el observador
-const userState = (callback) => onAuthStateChanged(auth, callback);
+const userState = (user) => onAuthStateChanged(auth, user);
 
-const user1 = auth.currentUser;
+const user1 = () => auth.currentUser;
+
 export {
   auth,
   app,

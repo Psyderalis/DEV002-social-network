@@ -1,13 +1,14 @@
 /* eslint-disable no-param-reassign */
 import {
-  deleteTask, getTask, onGetTasks, saveTask, updateTask, giveLike
+  deleteTask, getTask, onGetTasks, saveTask, updateTask, giveLike, disLike 
 } from './firestore.js';
 
- import { userState } from './auth.js';
+ import { user1 } from './auth.js';
 
 export const homeE = (taskContainer, taskForm) => {
   let editando = false;
   let id = '';
+  let like = false;
 
   window.addEventListener('DOMContentLoaded', async () => {
     // const querySnapshot = await getTasks();
@@ -41,27 +42,29 @@ export const homeE = (taskContainer, taskForm) => {
       });
       taskContainer.innerHTML = divContain;
 
-      let userId = 
-      userState((user) => {
-        if (user) {
-          userId = user.uid;
-          return userId
-      //     console.log(displayName, photoURL, nameUser)
-        }
-      })
+      
+      const userId = user1().uid;
 
-      console.log(userId)
-     
       const likeBtn = taskContainer.querySelectorAll('.like');
 
       likeBtn.forEach((btn) => {
         btn.addEventListener('click', (e) => {
-          giveLike(e.target.dataset.id);
-          console.log(e);
-          btn.src="imagenes/like.png";
-          //console.log(user.uid)
+          const id = e.target.dataset.id;
+          if (!like) {
+            giveLike(id, userId);
+            btn.src="imagenes/like.png";
+            like = true;
+            console.log("toma tu like")
+          }
+          else {
+            disLike(id, userId);
+            btn.src="imagenes/dislike.png";
+            like = false;
+            console.log("me llevo mi like")
+          }
         });
       });
+
 
       const btnEliminar = taskContainer.querySelectorAll('.delete');
 

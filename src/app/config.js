@@ -19,6 +19,8 @@ import {
   getDoc,
   updateDoc,
   onSnapshot,
+  arrayUnion,
+  arrayRemove,
 } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js';
 
 const firebaseConfig = {
@@ -63,4 +65,6 @@ export {
   getDoc,
   updateDoc,
   onSnapshot,
+  arrayUnion,
+  arrayRemove,
 };
