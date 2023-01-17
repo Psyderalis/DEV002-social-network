@@ -83,9 +83,9 @@ export const updateTask = (id, nuevosCampos) => {
 };
 
 //-----LIKES----------------------
-export const giveLike = () => {
+export const giveLike = (uid) => {
   addDoc(collection(conFirestore, "likes"), {
-    uid: "",
+    userId: uid,
     like: true,
   })
 };

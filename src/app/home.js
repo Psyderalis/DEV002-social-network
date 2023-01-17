@@ -3,7 +3,7 @@ import {
   deleteTask, getTask, onGetTasks, saveTask, updateTask, giveLike
 } from './firestore.js';
 
-// import { userState } from './firebase.js';
+ import { userState } from './auth.js';
 
 export const homeE = (taskContainer, taskForm) => {
   let editando = false;
@@ -41,24 +41,25 @@ export const homeE = (taskContainer, taskForm) => {
       });
       taskContainer.innerHTML = divContain;
 
-      // userState((user) => {
-      //   const divElemnt = document.querySelector('.post')
-      //   const nameUser = divElemnt.querySelector('.nombreDeUsuario')
-
-      //   if (user) {
-      //     const displayName = user.displayName;
-      //     const photoURL = user.photoURL;
-      //     nameUser.innerHTML = displayName;
-      //     // const photoUser.src = photoURL;
+      let userId = 
+      userState((user) => {
+        if (user) {
+          userId = user.uid;
+          return userId
       //     console.log(displayName, photoURL, nameUser)
-      //   }
-      // })
+        }
+      })
+
+      console.log(userId)
+     
       const likeBtn = taskContainer.querySelectorAll('.like');
 
       likeBtn.forEach((btn) => {
         btn.addEventListener('click', (e) => {
           giveLike(e.target.dataset.id);
+          console.log(e);
           btn.src="imagenes/like.png";
+          //console.log(user.uid)
         });
       });
 
