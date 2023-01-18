@@ -69,7 +69,7 @@ export const saveTask = (description) => {
   console.log(description);
   addDoc(collection(conFirestore, 'tasks'), {
     description,
-    likes: [],
+    likes: [ ],
   });
 };
 
@@ -88,7 +88,11 @@ export const updateTask = (id, nuevosCampos) => {
 //-----LIKES----------------------
 export const giveLike = (id, nuevoLike) => {
   updateDoc(doc(conFirestore, 'tasks', id), {
-    likes: arrayUnion(nuevoLike)
+    likes: 
+      arrayUnion({
+      userId: nuevoLike,
+      like: true,
+    })
   })
     .then(function () {
       console.log("+1 like");
