@@ -1,9 +1,9 @@
 /* eslint-disable no-param-reassign */
 import {
-  deleteTask, getTask, onGetTasks, saveTask, updateTask, giveLike, disLike 
+  deleteTask, getTask, onGetTasks, saveTask, updateTask, giveLike, disLike
 } from './firestore.js';
 
- import { user1 } from './auth.js';
+import { user1 } from './auth.js';
 
 export const homeE = (taskContainer, taskForm) => {
   let editando = false;
@@ -42,26 +42,39 @@ export const homeE = (taskContainer, taskForm) => {
       });
       taskContainer.innerHTML = divContain;
 
-      
+
+
       const userId = user1().uid;
+
+      //const currentLike = (task, userId) => console.log(task, userId);
+
+
+
 
       const likeBtn = taskContainer.querySelectorAll('.like');
 
+
       likeBtn.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
+        btn.addEventListener('click', async (e) => {
           const id = e.target.dataset.id;
-          if (!like) {
+          const doc = await getTask(id);
+          const task = doc.data();
+          const likes = task.likes;
+          const currentLike = likes.indexOf(userId)
+          if (currentLike == -1) {
             giveLike(id, userId);
-            btn.src="imagenes/like.png";
-            like = true;
+            btn.src = "imagenes/like.png";
             console.log("toma tu like")
           }
           else {
             disLike(id, userId);
-            btn.src="imagenes/dislike.png";
-            like = false;
+            btn.src = "imagenes/dislike.png";
             console.log("me llevo mi like")
           }
+          console.log(likes);
+          console.log(currentLike);
+
+
         });
       });
 
@@ -80,6 +93,7 @@ export const homeE = (taskContainer, taskForm) => {
         btn.addEventListener('click', async (e) => {
           const doc = await getTask(e.target.dataset.id);
           const task = doc.data();
+          console.log(task)
 
           taskForm.description.value = task.description;
           id = e.target.dataset.id;
