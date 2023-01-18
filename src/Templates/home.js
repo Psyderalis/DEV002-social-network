@@ -17,7 +17,7 @@ export const templateHome = `
             </div>
             <form class="postPorPublicar" id="task-form">
                 <img class="fotoDePerfil" src="imagenes/pug.jpg" alt='foto del usuario' >
-                <input id='description' class="inputPostPorPublicar" placeholder='¿En qué estás pensando?'>
+                <input id='description' class="inputPostPorPublicar" placeholder='¿En qué estás pensando?' required>
                 <button id='guardar' class="Publicar">Publicar</button>
             </form> 
             <div id='task-container'>
