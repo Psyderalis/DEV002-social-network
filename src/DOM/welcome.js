@@ -4,38 +4,37 @@
 // import {credentials} from "../app/googleLogin.js"
 // import {  } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
 import { onNavigate } from '../main.js';
-import { auth, onAuthStateChanged } from '../app/config.js';
+import { userState } from '../app/auth.js';
 import { templateWelcome } from '../Templates/welcome.js';
 
 // Pantalla 3 - Bienvenida--------------------------------
 export const Welcome = () => {
-  onAuthStateChanged(auth, async (user) => {
-    try {
-      if (!user) {
-        onNavigate('/registro');
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  });
+    userState((user) => {
+        if (!user) {
+            onNavigate('/')
+        }
+        else {
+            onNavigate('/home')
+        }
+    });
 
-  const div = document.createElement('div');
-  div.className = 'pantalla';
-  div.id = 'bienvenida';
-  // const Bienvenida = ;
+    const div = document.createElement('div');
+    div.className = 'pantalla';
+    div.id = 'bienvenida';
+    // const Bienvenida = ;
 
-  div.innerHTML = templateWelcome;
+    div.innerHTML = templateWelcome;
 
-  const holaBienv = div.querySelector('#hola-bienvenida');
-  console.log(holaBienv);
-  // obtengo el valor del local storage
-  const nombreObtenido = localStorage.getItem('Nombre');
+    const holaBienv = div.querySelector('#hola-bienvenida');
+    console.log(holaBienv);
+    // obtengo el valor del local storage
+    const nombreObtenido = localStorage.getItem('Nombre');
 
-  holaBienv.innerHTML = `¡Hola ${nombreObtenido}, tu cuenta ha sido creada con exito!`;
+    holaBienv.innerHTML = `¡Hola ${nombreObtenido}, tu cuenta ha sido creada con exito!`;
 
-  const comenzarBtn = div.querySelector('#comenzarBtn');
-  comenzarBtn.addEventListener('click', () => {
-    onNavigate('/home');
-  });
-  return div;
+    const comenzarBtn = div.querySelector('#comenzarBtn');
+    comenzarBtn.addEventListener('click', () => {
+        onNavigate('/home');
+    });
+    return div;
 };

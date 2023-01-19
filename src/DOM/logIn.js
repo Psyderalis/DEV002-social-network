@@ -7,7 +7,7 @@
 // import {  } from '../app/firebase.js';
 
 import {
-  onAuthStateChanged, auth, login, googleLog,
+  userState, login, googleLog,
 } from '../app/auth.js';
 import { onNavigate } from '../main.js';
 
@@ -90,6 +90,13 @@ export const Login = () => {
         const googleUid = (user.user.uid);
         const googlePhotoURL = (user.user.photoURL);
         console.log(googleEmail, googlePhotoURL, googleUid, googleUser);
+
+        if (user) {
+            onNavigate('/home');
+          }
+          else {
+            onNavigate('/');
+          }
       });
   });
 
@@ -98,14 +105,15 @@ export const Login = () => {
   });
 
   loginBtn.addEventListener('click', () => {
-    onAuthStateChanged(auth, async (user) => {
-      try {
+    userState ((user) => {
+      
         if (user) {
           onNavigate('/home');
         }
-      } catch (error) {
-        console.log(error);
-      }
+        else {
+          onNavigate('/');
+        }
+      
     });
   });
 

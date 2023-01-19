@@ -5,20 +5,18 @@
 // import {  } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
 import { homeE } from '../app/home.js';
 import { onNavigate } from '../main.js';
-import { auth, onAuthStateChanged, logout } from '../app/auth.js';
+import { userState, logout } from '../app/auth.js';
 import { templateHome } from '../Templates/home.js';
 // Vista de Home de Petsbook
 // import { loginCheck } from '../app/loginCheck.js'
 
 export const Home = () => {
-  onAuthStateChanged(auth, async (user) => {
-    try {
+  userState((user) => {
+    
       if (!user) {
         onNavigate('/');
       }
-    } catch (error) {
-      console.log(error);
-    }
+
   });
 
   const div = document.createElement('div');
@@ -116,5 +114,20 @@ export const Home = () => {
     logoutQ.style.display = 'none';
     modalPuntos.style.display = 'none';
   });
+
+    //   -----------modal eliminar
+
+    const deleteModalContenedor = div.querySelector('.delete-Modal-Contenedor');
+    console.log(deleteModalContenedor)
+    const deleteModal = div.querySelector('.delete-Modal');
+    const borrarBtn = div.querySelector('.borrarBtn');
+    const equisSalir = div.querySelector('.equisSalir');
+
+    equisSalir.addEventListener('click', () => {
+        deleteModalContenedor.style.display='none';
+        deleteModal.style.display= 'none';
+    })
+
+
   return div;
 };
