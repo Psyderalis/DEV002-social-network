@@ -93,8 +93,6 @@ export const giveLike = (id, nuevoLike) => {
     likes:
       arrayUnion(
         nuevoLike
-        //{ userId: nuevoLike,
-        // like: true,}
       )
   })
     .then(function () {
@@ -119,6 +117,8 @@ export const disLike = (id, viejoLike) => {
       console.error("Error", error);
     });
 };
+
+
 
 export {
   arrayUnion,

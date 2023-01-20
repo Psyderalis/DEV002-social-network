@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 import {
-  deleteTask, getTask, onGetTasks, saveTask, updateTask, giveLike, disLike
+  deleteTask, getTask, onGetTasks, saveTask, updateTask, giveLike, disLike, 
 } from './firestore.js';
 
 import { user1 } from './auth.js';
@@ -8,15 +8,17 @@ import { user1 } from './auth.js';
 export const homeE = (taskContainer, taskForm) => {
   let editando = false;
   let id = '';
-  let like = false;
-
+//espera a que DOM se cargue completamente
   window.addEventListener('DOMContentLoaded', async () => {
     // const querySnapshot = await getTasks();
-
+//querysnapshot es una "foto" instantánea de la base de datos
     onGetTasks((querySnapshot) => {
       let divContain = '';
       querySnapshot.forEach((doc) => {
         const task = doc.data();
+        const likes = task.likes;
+        let numero = likes.length;
+
         divContain += `
         <section class="post">
         <div class="cabezaDePost">
@@ -35,46 +37,40 @@ export const homeE = (taskContainer, taskForm) => {
         <div  class="linea"></div>
         <div class="footerDePost">
         <img class="like" data-id="${doc.id}" src="imagenes/dislike.png" width=30px>
-        <p>1 Me encanta</p>
+        <p class="contadorLike" data-id="${doc.id}"> ${numero} Me encanta</p>
         </div>
         </section>  
         `;
       });
       taskContainer.innerHTML = divContain;
 
-
-
       const userId = user1().uid;
-
-      //const currentLike = (task, userId) => console.log(task, userId);
-
-
-
-
       const likeBtn = taskContainer.querySelectorAll('.like');
-
 
       likeBtn.forEach((btn) => {
         btn.addEventListener('click', async (e) => {
           const id = e.target.dataset.id;
           const doc = await getTask(id);
-          const task = doc.data();
-          const likes = task.likes;
+          const likes = doc.data().likes;
           const currentLike = likes.indexOf(userId)
+          // let numero = likes.length;
+          console.log(likes);
           if (currentLike == -1) {
-            giveLike(id, userId);
             btn.src = "imagenes/like.png";
-            console.log("toma tu like")
+            giveLike(id, userId);
+            //console.log(btn)
+            // numero = numero + 1
+            // console.log(numero + " likes")
+            // contadorLike.innerHTML = numero + " me encanta"
           }
           else {
-            disLike(id, userId);
             btn.src = "imagenes/dislike.png";
-            console.log("me llevo mi like")
+            disLike(id, userId);
+            // numero = numero - 1
+            // console.log(numero + " likes")
+            // contadorLike.innerHTML = numero + " me encanta"
+            //console.log(btn)
           }
-          console.log(likes);
-          console.log(currentLike);
-
-
         });
       });
 
