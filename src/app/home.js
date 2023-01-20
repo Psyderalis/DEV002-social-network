@@ -1,21 +1,24 @@
 /* eslint-disable no-param-reassign */
 import {
-  deleteTask, getTask, onGetTasks, saveTask, updateTask,
+  deleteTask, getTask, onGetTasks, saveTask, updateTask, giveLike, disLike, 
 } from './firestore.js';
 
-// import { userState } from './firebase.js';
+import { user1 } from './auth.js';
 
 export const homeE = (taskContainer, taskForm) => {
   let editando = false;
   let id = '';
-
+//espera a que DOM se cargue completamente
   window.addEventListener('DOMContentLoaded', async () => {
     // const querySnapshot = await getTasks();
-
+//querysnapshot es una "foto" instantánea de la base de datos
     onGetTasks((querySnapshot) => {
       let divContain = '';
       querySnapshot.forEach((doc) => {
         const task = doc.data();
+        const likes = task.likes;
+        let numero = likes.length;
+
         divContain += `
         <section class="post">
         <div class="cabezaDePost">
@@ -33,26 +36,44 @@ export const homeE = (taskContainer, taskForm) => {
         </div>
         <div  class="linea"></div>
         <div class="footerDePost">
-        <img src="imagenes/huella.png" width=30px>
-        <p>1 Me encanta</p>
+        <img class="like" data-id="${doc.id}" src="imagenes/dislike.png" width=30px>
+        <p class="contadorLike" data-id="${doc.id}"> ${numero} Me encanta</p>
         </div>
         </section>  
         `;
       });
       taskContainer.innerHTML = divContain;
 
-      // userState((user) => {
-      //   const divElemnt = document.querySelector('.post')
-      //   const nameUser = divElemnt.querySelector('.nombreDeUsuario')
+      const userId = user1().uid;
+      const likeBtn = taskContainer.querySelectorAll('.like');
 
-      //   if (user) {
-      //     const displayName = user.displayName;
-      //     const photoURL = user.photoURL;
-      //     nameUser.innerHTML = displayName;
-      //     // const photoUser.src = photoURL;
-      //     console.log(displayName, photoURL, nameUser)
-      //   }
-      // })
+      likeBtn.forEach((btn) => {
+        btn.addEventListener('click', async (e) => {
+          const id = e.target.dataset.id;
+          const doc = await getTask(id);
+          const likes = doc.data().likes;
+          const currentLike = likes.indexOf(userId)
+          // let numero = likes.length;
+          console.log(likes);
+          if (currentLike == -1) {
+            btn.src = "imagenes/like.png";
+            giveLike(id, userId);
+            //console.log(btn)
+            // numero = numero + 1
+            // console.log(numero + " likes")
+            // contadorLike.innerHTML = numero + " me encanta"
+          }
+          else {
+            btn.src = "imagenes/dislike.png";
+            disLike(id, userId);
+            // numero = numero - 1
+            // console.log(numero + " likes")
+            // contadorLike.innerHTML = numero + " me encanta"
+            //console.log(btn)
+          }
+        });
+      });
+
 
       const btnEliminar = taskContainer.querySelectorAll('.delete');
 
@@ -68,6 +89,7 @@ export const homeE = (taskContainer, taskForm) => {
         btn.addEventListener('click', async (e) => {
           const doc = await getTask(e.target.dataset.id);
           const task = doc.data();
+          console.log(task)
 
           taskForm.description.value = task.description;
           id = e.target.dataset.id;

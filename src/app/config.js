@@ -19,15 +19,17 @@ import {
   getDoc,
   updateDoc,
   onSnapshot,
+  arrayUnion,
+  arrayRemove,
 } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAxTIdXRfXDybuXxhquYjdQ8BRa1SqyaMM',
-  authDomain: 'social-network-app-7c3a3.firebaseapp.com',
-  projectId: 'social-network-app-7c3a3',
-  storageBucket: 'social-network-app-7c3a3.appspot.com',
-  messagingSenderId: '91410033495',
-  appId: '1:91410033495:web:60d293e50eb7c8596a6c12',
+  apiKey: "AIzaSyAjyGpBnFkNz9XI9lv5Y8KoXzMGxZjPh-c",
+  authDomain: "petsbook-m.firebaseapp.com",
+  projectId: "petsbook-m",
+  storageBucket: "petsbook-m.appspot.com",
+  messagingSenderId: "27668527572",
+  appId: "1:27668527572:web:dea1d8d03f6e422236be41"
 };
 
 // Initialize Firebase
@@ -63,4 +65,6 @@ export {
   getDoc,
   updateDoc,
   onSnapshot,
+  arrayUnion,
+  arrayRemove,
 };
