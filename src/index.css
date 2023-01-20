@@ -436,7 +436,76 @@ ul:hover li {
 }
 
 /* ------------------------------------------- */
+/* ------------------------------------------- */
 
+/* home -editar */
+
+.modalEditar{
+    position:fixed;
+    top: 0;
+    /* z-index: 1589; */
+    
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+.edit{
+    /* background: #90ADC6; */
+    /* display: flex; */
+    /* align-items: center;
+    justify-content: center; */
+    height: 240px;
+    width: 240px;
+    background-color: rgba(250, 250, 250, 1);
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgb(175, 174, 174);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.flechaAtras{
+    color: #000000;
+}
+.cabezaDeEdit{
+    width: 90%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #FAD02C;
+    /* border-radius: 20px 20px 0px 0px;
+    border-color: #d9d9d9;
+    border: solid; */
+    border-width: 2px;
+    border: 4px solid #c7c2c2;
+    border-radius: 20px 20px 0 0;
+}
+.inputPost{
+    width: 90%;
+    min-height: 50px;
+    border-color: #d9d9d9;
+    color: #000000;
+    /* border-color: rgba(0, 0, 0, 0.219); */
+    border-radius: 0 0 20px 20px ;
+    border-width: 2px;
+    border: 4px solid #c7c2c2;
+    /* padding: 5px; */
+}
+.btnGuardar{
+    background-color: #333652;
+    border-radius: 40px;
+    color: aliceblue;
+    font-size: small;
+    border: none;
+    cursor: pointer;
+}
 
 
 
