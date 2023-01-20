@@ -3,7 +3,7 @@ import {
     deleteTask, getTask, onGetTasks, saveTask, updateTask,
 } from './firestore.js';
 
-import { templatePost } from '../Templates/templatePost.js';
+// import { templatePost } from '../Templates/templatePost.js';
 // import { userState } from './firebase.js';
 
 export const homeE = (taskContainer, taskForm) => {
@@ -18,10 +18,31 @@ export const homeE = (taskContainer, taskForm) => {
             querySnapshot.forEach((doc) => {
                 const task = doc.data();
                 let userName = doc.data().userName;
-                let aidi = doc.data().id;
-                let descrip = task.description;
+                // let aidi = doc.data().id;
+                // let descrip = task.description;
                 console.log(userName);
-                divContain += templatePost(userName, aidi, descrip);
+                divContain += `
+                <section class="post">
+                <div class="cabezaDePost">
+                <img class="fotoDePerfil" src="imagenes/pug.jpg" alt='foto del usuario'>
+                <p class="nombreDeUsuario">${userName}</p>
+                <ul disabled selected class ="menu-horizontal" id="mas"><img src="imagenes/mas.png" width=30px height=30px>
+                 <div class="edit-delet">
+                 <li class='editar' data-id='${doc.id}'><img width=15px src="imagenes/editar.png"> Editar publicación</li>
+                 <li class='delete' data-id='${doc.id}'><img width=15px src="imagenes/eliminar.png"> Eliminar </li>
+                 </div>
+                </ul>
+                </div>
+                <div class="cuerpoDePost" >
+                <p class="contenidoP"> ${task.description} </p> 
+                </div>
+                <div  class="linea"></div>
+                <div class="footerDePost">
+                <img src="imagenes/huella.png" width=30px>
+                <p>1 Me encanta</p>
+                </div>
+                </section>  
+                `;
             });
             taskContainer.innerHTML = divContain;
 
@@ -39,12 +60,64 @@ export const homeE = (taskContainer, taskForm) => {
             // })
 
             const btnEliminar = taskContainer.querySelectorAll('.delete');
+            console.log(btnEliminar)
 
-            btnEliminar.forEach((btn) => {
-                btn.addEventListener('click', (e) => {
-                    deleteTask(e.target.dataset.id);
+            const test1 = document.querySelector('.contentmodal');
+
+            btnEliminar.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const deleteModalContenedor = document.createElement('div');
+                    deleteModalContenedor.className = 'delete-Modal-Contenedor';
+                    deleteModalContenedor.id = 'delete-Modal-Contenedor';
+                    // ------------
+
+                    const prueba = `
+                <div id="delete-Modal" class="delete-Modal">
+                <p id="equisSalir" class="equisSalir"> X </p>
+                <p id="Q" class="Q"> ¿Quieres eliminar este post? </p>
+                <button id="borrarBtn" class="borrarBtn">Eliminar</button>
+                </div>
+                 `
+                    deleteModalContenedor.innerHTML = prueba;
+                    test1.appendChild(deleteModalContenedor);
+
+
+
+                    const boton = deleteModalContenedor.querySelector('.borrarBtn')
+                    console.log(boton)
+
+                    boton.addEventListener('click', (e) => {
+                        deleteTask(e.target.dataset.id);
+                    });
+                    const equisSalir = deleteModalContenedor.querySelector('.equisSalir');
+                    // const contenedorModalDelete = deleteModalContenedor.querySelector('.delete-Modal-Contenedor')
+                    // console.log(contenedorModalDelete)
+                    const deleteModal = deleteModalContenedor.querySelector('.delete-Modal')
+                    
+                    test1.style.display = 'flex';
+                    deleteModalContenedor.style.display = 'flex';
+                    deleteModal.style.display = 'flex';
+
+                    console.log(equisSalir)
+                    equisSalir.addEventListener('click', () => {
+                        test1.style.display = 'none';
+                        deleteModalContenedor.style.display = 'none';
+                        deleteModal.style.display = 'none';
+
+
+                    });
+
+
+                    return
                 });
             });
+
+            // btnEliminar.addEventListener('click', (e) => {
+            //     e.preventDefault()
+            //     test1.style.display = 'flex';
+            //     deleteModalContenedor.style.display = 'flex';
+            //     deleteModal.style.display = 'flex';
+            // })
 
             const btnEditar = taskContainer.querySelectorAll('.editar');
 
@@ -58,6 +131,7 @@ export const homeE = (taskContainer, taskForm) => {
                     editando = true;
 
                     taskForm.guardar.innerText = 'Editar y publicar';
+
                 });
             });
         });

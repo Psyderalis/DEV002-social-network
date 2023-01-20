@@ -85,10 +85,10 @@ export const Login = () => {
     googleLog()
       .then((user) => {
         // Aquí llevar al usuario a /home
-        const googleUser = (user.user.displayName);
-        const googleEmail = (user.user.email);
-        const googleUid = (user.user.uid);
-        const googlePhotoURL = (user.user.photoURL);
+        let googleUser = (user.user.displayName);
+        let googleEmail = (user.user.email);
+        let googleUid = (user.user.uid);
+        let googlePhotoURL = (user.user.photoURL);
         console.log(googleEmail, googlePhotoURL, googleUid, googleUser);
 
         if (user) {

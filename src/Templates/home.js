@@ -29,15 +29,7 @@ export const templateHome = `
                     <button id="logoutBtn" class="logoutBtn">Cerrar sesión</button>
                 </div>
             </div>
-
-            <div id="delete-Modal-Contenedor" class="delete-Modal-Contenedor"></div>
-            <div id="delete-Modal" class="delete-Modal">
-                <p id="equisSalir" class="equisSalir"> X </p>
-                <p id="Q" class="Q"> ¿Quieres eliminar este post? </p>
-                <button id="borrarBtn" class="borrarBtn">Eliminar</button>
-            </div>
-            </div>
-
+        
             <div class="footerDeHome">
              <div class = "divIconoHome">
              <img class="iconHome" src="imagenes/home.png" width=25px alt='foto del usuario'>

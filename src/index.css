@@ -438,7 +438,7 @@ ul:hover li {
 /* ------------------------------------------- */
 
 .delete-Modal-Contenedor{
-    /* display: none; */
+    display: none;
     position: absolute;
     top: 0;
     height: 100%;
@@ -446,7 +446,7 @@ ul:hover li {
     backdrop-filter: blur(10px);
 }
 .delete-Modal {
-    /* display: none; */
+    display: none;
     flex-direction: column;
     align-items: center;
     text-align: center;
