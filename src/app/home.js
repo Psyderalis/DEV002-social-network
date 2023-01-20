@@ -14,7 +14,6 @@ export const homeE = (taskContainer, taskForm, div) => {
 
   const flechaAtras = document.createElement('div');
   flechaAtras.className = 'flechaAtras';
-  // flechaAtras.innerText = '<=';
 
   const foto = document.createElement('img');
   foto.className = 'fotoDePerfil';
@@ -141,7 +140,6 @@ export const homeE = (taskContainer, taskForm, div) => {
           flechaAtras.addEventListener('click', () => {
             // e.preventDefault();
             modal.style.display = 'none';
-            // taskForm.guardar.innerText = 'Publicar';
           });
 
           btnGuardar.addEventListener('click', () => {
@@ -151,7 +149,6 @@ export const homeE = (taskContainer, taskForm, div) => {
               { description: inputPost.value },
             );
             modal.style.display = 'none';
-            // edit.style.display = 'none';
           });
         });
       });
