@@ -1,23 +1,54 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable no-console */
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-param-reassign */
 import {
-  deleteTask, getTask, onGetTasks, saveTask, updateTask, giveLike, disLike, 
+  deleteTask, getTask, onGetTasks, saveTask, updateTask, giveLike, disLike,
 } from './firestore.js';
 
 import { user1 } from './auth.js';
 
 export const homeE = (taskContainer, taskForm) => {
   let editando = false;
-  let id = '';
-//espera a que DOM se cargue completamente
+  let idEdit = '';
+
+  const flechaAtras = document.createElement('div');
+  flechaAtras.className = 'flechaAtras';
+  flechaAtras.innerText = '<=';
+
+  const foto = document.createElement('img');
+  foto.className = 'fotoDePerfil';
+  foto.src = 'imagenes/pug.jpg';
+
+  const nombre = document.createElement('p');
+  nombre.className = 'nombreDeUsuario';
+  nombre.innerText = 'Manchitas';
+
+  const cabezaDePost = document.createElement('div');
+  cabezaDePost.className = 'cabezaDeEdit';
+
+  const inputPost = document.createElement('input');
+  inputPost.className = 'inputPost';
+
+  const btnGuardar = document.createElement('button');
+  btnGuardar.className = 'btnGuardar';
+  btnGuardar.innerText = 'Guardar';
+  const modal = document.createElement('section');
+  modal.className = 'modalEditar';
+
+  const edit = document.createElement('div');
+  edit.className = 'edit';
+
+  // espera a que DOM se cargue completamente
   window.addEventListener('DOMContentLoaded', async () => {
     // const querySnapshot = await getTasks();
-//querysnapshot es una "foto" instantánea de la base de datos
+    // querysnapshot es una "foto" instantánea de la base de datos
     onGetTasks((querySnapshot) => {
       let divContain = '';
       querySnapshot.forEach((doc) => {
         const task = doc.data();
         const likes = task.likes;
-        let numero = likes.length;
+        const numero = likes.length;
 
         divContain += `
         <section class="post">
@@ -52,28 +83,26 @@ export const homeE = (taskContainer, taskForm) => {
           const id = e.target.dataset.id;
           const doc = await getTask(id);
           const likes = doc.data().likes;
-          const currentLike = likes.indexOf(userId)
+          const currentLike = likes.indexOf(userId);
           // let numero = likes.length;
           console.log(likes);
           if (currentLike == -1) {
-            btn.src = "imagenes/like.png";
+            btn.src = 'imagenes/like.png';
             giveLike(id, userId);
-            //console.log(btn)
+            // console.log(btn)
             // numero = numero + 1
             // console.log(numero + " likes")
             // contadorLike.innerHTML = numero + " me encanta"
-          }
-          else {
-            btn.src = "imagenes/dislike.png";
+          } else {
+            btn.src = 'imagenes/dislike.png';
             disLike(id, userId);
             // numero = numero - 1
             // console.log(numero + " likes")
             // contadorLike.innerHTML = numero + " me encanta"
-            //console.log(btn)
+            // console.log(btn)
           }
         });
       });
-
 
       const btnEliminar = taskContainer.querySelectorAll('.delete');
 
@@ -89,10 +118,10 @@ export const homeE = (taskContainer, taskForm) => {
         btn.addEventListener('click', async (e) => {
           const doc = await getTask(e.target.dataset.id);
           const task = doc.data();
-          console.log(task)
+          console.log(task);
 
           taskForm.description.value = task.description;
-          id = e.target.dataset.id;
+          idEdit = e.target.dataset.id;
           editando = true;
 
           taskForm.guardar.innerText = 'Editar y publicar';
@@ -111,7 +140,7 @@ export const homeE = (taskContainer, taskForm) => {
       saveTask(description.value);
     } else {
       updateTask(
-        id,
+        idEdit,
         { description: description.value },
       );
       editando = false;
