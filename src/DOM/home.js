@@ -70,7 +70,7 @@ export const Home = () => {
   console.log(taskContainer);
   const taskForm = div.querySelector('#task-form');
   console.log(taskForm);
-  homeE(taskContainer, taskForm);
+  homeE(taskContainer, taskForm, div);
 
   const xSalir = div.querySelector('#xSalir');
   const puntos = div.querySelector('#puntos');

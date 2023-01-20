@@ -8,13 +8,13 @@ import {
 
 import { user1 } from './auth.js';
 
-export const homeE = (taskContainer, taskForm) => {
-  let editando = false;
+export const homeE = (taskContainer, taskForm, div) => {
+  const editando = false;
   let idEdit = '';
 
   const flechaAtras = document.createElement('div');
   flechaAtras.className = 'flechaAtras';
-  flechaAtras.innerText = '<=';
+  // flechaAtras.innerText = '<=';
 
   const foto = document.createElement('img');
   foto.className = 'fotoDePerfil';
@@ -27,8 +27,12 @@ export const homeE = (taskContainer, taskForm) => {
   const cabezaDePost = document.createElement('div');
   cabezaDePost.className = 'cabezaDeEdit';
 
-  const inputPost = document.createElement('input');
+  const inputPost = document.createElement('textarea');
   inputPost.className = 'inputPost';
+
+  const textoEdit = document.createElement('p');
+  textoEdit.className = 'textoEdit';
+  textoEdit.innerText = 'Editando Publicación';
 
   const btnGuardar = document.createElement('button');
   btnGuardar.className = 'btnGuardar';
@@ -38,6 +42,9 @@ export const homeE = (taskContainer, taskForm) => {
 
   const edit = document.createElement('div');
   edit.className = 'edit';
+
+  const postEdit = document.createElement('div');
+  postEdit.className = 'postEdit';
 
   // espera a que DOM se cargue completamente
   window.addEventListener('DOMContentLoaded', async () => {
@@ -118,35 +125,44 @@ export const homeE = (taskContainer, taskForm) => {
         btn.addEventListener('click', async (e) => {
           const doc = await getTask(e.target.dataset.id);
           const task = doc.data();
+
           console.log(task);
+          modal.style.display = 'flex';
+          cabezaDePost.append(foto, nombre);
+          postEdit.append(cabezaDePost, inputPost);
+          edit.append(flechaAtras, textoEdit, postEdit, btnGuardar);
+          modal.appendChild(edit);
+          div.appendChild(modal);
 
-          taskForm.description.value = task.description;
+          inputPost.value = task.description;
+          console.log(task.description);
           idEdit = e.target.dataset.id;
-          editando = true;
 
-          taskForm.guardar.innerText = 'Editar y publicar';
+          flechaAtras.addEventListener('click', () => {
+            // e.preventDefault();
+            modal.style.display = 'none';
+            // taskForm.guardar.innerText = 'Publicar';
+          });
+
+          btnGuardar.addEventListener('click', () => {
+            e.preventDefault();
+            updateTask(
+              idEdit,
+              { description: inputPost.value },
+            );
+            modal.style.display = 'none';
+            // edit.style.display = 'none';
+          });
         });
       });
     });
   });
-
+  // Publicar----------------------------------
+  const description = taskForm.description;
   taskForm.addEventListener('submit', (e) => {
     // para no recargar la pag
     e.preventDefault();
-
-    const description = taskForm.description;
-
-    if (!editando) {
-      saveTask(description.value);
-    } else {
-      updateTask(
-        idEdit,
-        { description: description.value },
-      );
-      editando = false;
-      taskForm.guardar.innerText = 'Publicar';
-    }
-
+    saveTask(description.value);
     taskForm.reset();
   });
 };
