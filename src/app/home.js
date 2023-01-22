@@ -65,35 +65,44 @@ export const homeE = (taskContainer, taskForm) => {
             const test1 = document.querySelector('.contentmodal');
 
             btnEliminar.forEach(btn => {
-                btn.addEventListener('click', () => {
+                btn.addEventListener('click', (e) => {
+                    console.log(e.target.dataset.id)
                     const deleteModalContenedor = document.createElement('div');
                     deleteModalContenedor.className = 'delete-Modal-Contenedor';
                     deleteModalContenedor.id = 'delete-Modal-Contenedor';
                     // ------------
 
                     const prueba = `
-                <div id="delete-Modal" class="delete-Modal">
-                <p id="equisSalir" class="equisSalir"> X </p>
-                <p id="Q" class="Q"> ¿Quieres eliminar este post? </p>
-                <button id="borrarBtn" class="borrarBtn">Eliminar</button>
-                </div>
-                 `
+                    <div id="delete-Modal" class="delete-Modal">
+                    <p id="equisSalir" class="equisSalir"> X </p>
+                    <p id="Q" class="Q"> ¿Quieres eliminar este post? </p>
+                    <button id="borrarBtn" data-id='${e.target.dataset.id}' class="borrarBtn">Eliminar</button>
+                    </div>
+                     `
+
                     deleteModalContenedor.innerHTML = prueba;
                     test1.appendChild(deleteModalContenedor);
 
-
-
                     const boton = deleteModalContenedor.querySelector('.borrarBtn')
                     console.log(boton)
-
-                    boton.addEventListener('click', (e) => {
-                        deleteTask(e.target.dataset.id);
-                    });
                     const equisSalir = deleteModalContenedor.querySelector('.equisSalir');
                     // const contenedorModalDelete = deleteModalContenedor.querySelector('.delete-Modal-Contenedor')
                     // console.log(contenedorModalDelete)
-                    const deleteModal = deleteModalContenedor.querySelector('.delete-Modal')
-                    
+                    const deleteModal = deleteModalContenedor.querySelector('.delete-Modal');
+
+                    boton.addEventListener('click', async (e) => {
+
+                        console.log('boton eliminar')
+                        console.log(e.target.dataset.id)
+
+                        await deleteTask(e.target.dataset.id).then((res) => {
+                            deleteModalContenedor.style.display='none';
+                            deleteModal.style.display = 'none'
+                        }).catch((err) => console.log(err));
+                    });
+
+
+
                     test1.style.display = 'flex';
                     deleteModalContenedor.style.display = 'flex';
                     deleteModal.style.display = 'flex';
@@ -103,11 +112,7 @@ export const homeE = (taskContainer, taskForm) => {
                         test1.style.display = 'none';
                         deleteModalContenedor.style.display = 'none';
                         deleteModal.style.display = 'none';
-
-
                     });
-
-
                     return
                 });
             });
@@ -153,7 +158,6 @@ export const homeE = (taskContainer, taskForm) => {
             editando = false;
             taskForm.guardar.innerText = 'Publicar';
         }
-
         taskForm.reset();
     });
     return

@@ -7,7 +7,6 @@
 /* eslint-disable object-curly-spacing */
 /* eslint-disable import/no-unresolved */
 // Test para SignUp
-import { async } from 'regenerator-runtime';
 import {
     signup,
     auth,

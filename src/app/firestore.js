@@ -72,7 +72,7 @@ export const getTasks = () => getDocs(collection(conFirestore, 'tasks'));
 
 export const onGetTasks = (funcion) => onSnapshot(collection(conFirestore, 'tasks'), funcion);
 
-export const deleteTask = (id) => deleteDoc(doc(conFirestore, 'tasks', id));
+export const deleteTask = async (id) => deleteDoc(doc(conFirestore, 'tasks', id));
 
 export const getTask = (id) => getDoc(doc(conFirestore, 'tasks', id));
 
