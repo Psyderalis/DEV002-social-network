@@ -84,7 +84,6 @@ export const homeE = (taskContainer, taskForm) => {
                     test1.appendChild(deleteModalContenedor);
 
                     const boton = deleteModalContenedor.querySelector('.borrarBtn')
-                    console.log(boton)
                     const equisSalir = deleteModalContenedor.querySelector('.equisSalir');
                     // const contenedorModalDelete = deleteModalContenedor.querySelector('.delete-Modal-Contenedor')
                     // console.log(contenedorModalDelete)
@@ -92,7 +91,6 @@ export const homeE = (taskContainer, taskForm) => {
 
                     boton.addEventListener('click', async (e) => {
 
-                        console.log('boton eliminar')
                         console.log(e.target.dataset.id)
 
                         await deleteTask(e.target.dataset.id).then((res) => {
@@ -100,8 +98,6 @@ export const homeE = (taskContainer, taskForm) => {
                             deleteModal.style.display = 'none'
                         }).catch((err) => console.log(err));
                     });
-
-
 
                     test1.style.display = 'flex';
                     deleteModalContenedor.style.display = 'flex';
