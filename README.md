@@ -21,30 +21,70 @@ Las redes sociales son plataformas digitales formadas por comunidades de individ
 ***
 ## 2. Sobre Petsbook
 
-Petsbook es una app que ...
+¿Alguna vez te pusiste a pensar como debe  ser la vida cotidiana de tu compañero peludo(a)?
+
+¡Sin duda nuestros mejores amigos peluditos necesitan tiempo de calidad, porque los amamos!
+
+Es por eso que creamos Petsbook, una app dónde tu máscota podré conocer y pasear junto a otras máscotas de forma más segura ya que Petsbook te permite 
+conocer a personas como tú y tu máscota para reunirse.
 
 ***
 ## 3. Definición final del producto
 
-Brevemente cómo descubrimos las necesidades de los usuarios y cómo llegamos a la definición final de nuestro producto. Es importante que detallemos:
-
-* Quiénes son los principales usuarios de producto.
-* Qué problema resuelve el producto / para qué le servirá a estos usuarios.
+Cuando pensamos en las apps que ya tenemos instaladas en nuestros celulares, caemos en cuenta que si bien podemos socializar entre humanos, no hay una app en sí que se dedique hacer algo por mejorar e impulsar ese tiempo de cálidad para nuestras mascotas y de forma sociable tanto para ellos como para nosotros.
 
 ***
 ## 4. Historias de usuario
 
-<h4><b>Caso 1</b></h4>
+<h4><b>HU 1</b></h4>
 
-Contenido
+-Como: persona curiosa
+-Quiero: saber de que trata la pág
+-Para: poder decidir si unirme o no
 
-<h4><b>Caso 2</b></h4>
+<h4><b>HU 2</b></h4>
 
-Contenido
+-Como: amante de mis mascotas
+-Quiero: registrarme 
+-Para: poder iniciar sesión.
 
-<h4><b>Caso 3</b></h4>
 
-Contenido
+<h4><b>HU 3</b></h4>
+
+-Como: usuaria recién registrado
+-Quiero: iniciar sesión
+-Para: ingresar a la red social.
+
+<h4><b>HU 4</b></h4>
+
+-Como: usuaria que quiere compartir la vida de su mascota
+-Quiero: publicar algo (comentario)
+-Para: compartirlo con otras personas/ encontrar más personas afines a /..
+
+<h4><b>HU 5</b></h4>
+
+-Como: usuaria de la app
+-Quiero: editar mi publicación
+-Para: corregir un error que tuve
+
+<h4><b>HU 6</b></h4>
+
+-Como: usuaria que puede cometer errores
+-Quiero: borrar mi post
+-Para: eliminarlo.
+
+<h4><b>HU 7</b></h4>
+
+-Como: parte de la comunidad de la app
+-Quiero: darle y quitarle like a una publicación 
+-Para: indicar si me gustó.
+
+<h4><b>HU 8</b></h4>
+
+-Como: parte de la comunidad de la app
+-Quiero: ver la cantidad de likes de mi post
+-Para: ver saber cuantas personas comparten mi opinión.
+
 
 ***
 ## 5.  Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)
@@ -58,15 +98,24 @@ Figma."/>
 
 <img src="captura-de-pantalla-de-prototipo-de-alta-fidelidad-mobile.jpg" alt="Captura de panatalla de nuestro prototipo de alta fidelidad mobile en
 Figma."/>
-<!-- <img src="captura-prototipo-alta-vista-de-desktop.jpg" alt="Captura de panatalla de nuestro prototipo de alta fidelidad desktop en Figma."/> -->
+<img src="captura-prototipo-alta-vista-de-desktop.jpg" alt="Captura de panatalla de nuestro prototipo de alta fidelidad desktop en Figma."/>
 
 ***
 ## 7. Consideraciones técnicas UX
 
-Hacer al menos 2 entrevistas con usuarios.
-Hacer un prototipo de baja fidelidad.
-Asegurarte de que la implementación en código siga los lineamientos del diseño.
-Hacer sesiones de testing de usabilidad con el producto en HTML.
+-Comentarios generales de los test de usabilidad.
+
+Persona 1
+*Es como un facebook para mascotas, pero parece un foro.
+Se entiende el uso, solo cosas puntuales de diseño.
+
+Persona2
+*Es un facebook donde los animales chismean entre ellos.
+Cuestión de ser más especifico en la validación, pero es fácil de usar.
+
+Persona3
+*Entiendo que es como una red para mascotas, pero podria aclararse un poco más.
+Cree que la funcionalidad está buena, podría mejorar el disño pero en si es fácil de usar
 
 ***
 ## 8. Objetivos de aprendizaje
