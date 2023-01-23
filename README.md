@@ -7,8 +7,8 @@
 * [2. Sobre Petsbook](#2-sobre-petsbook)
 * [3. Definición final del producto](#3-definición-final-del-producto)
 * [4. Historias de usuario](#4-historias-de-usuario)
-* [5. Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)](#5-Diseño-de-la-baja-fidelidad)
-* [6. Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)](#6-Diseño-de-la-alta-fidelidad)
+* [5. Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)](#5-Diseño-de-la-Interfaz-de-Usuario)
+* [6. Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)](#6-Diseño-de-la-Interfaz-de-Usuario)
 * [7. Consideraciones técnicas UX](#7-Consideraciones-técnicas-UX)
 * [8. Objetivos de aprendizaje](#8-objetivos-de-aprendizaje)
 ***
