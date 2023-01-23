@@ -24,12 +24,12 @@ import {
 } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAjyGpBnFkNz9XI9lv5Y8KoXzMGxZjPh-c",
-  authDomain: "petsbook-m.firebaseapp.com",
-  projectId: "petsbook-m",
-  storageBucket: "petsbook-m.appspot.com",
-  messagingSenderId: "27668527572",
-  appId: "1:27668527572:web:dea1d8d03f6e422236be41"
+  apiKey: 'AIzaSyAjyGpBnFkNz9XI9lv5Y8KoXzMGxZjPh-c',
+  authDomain: 'petsbook-m.firebaseapp.com',
+  projectId: 'petsbook-m',
+  storageBucket: 'petsbook-m.appspot.com',
+  messagingSenderId: '27668527572',
+  appId: '1:27668527572:web:dea1d8d03f6e422236be41',
 };
 
 // Initialize Firebase
