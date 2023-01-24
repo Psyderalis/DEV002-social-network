@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 /* eslint-disable eqeqeq */
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
@@ -92,6 +93,57 @@ export const homeE = (taskContainer, taskForm, div) => {
       });
       taskContainer.innerHTML = divContain;
 
+      // -----------------------------------
+      const btnEliminar = taskContainer.querySelectorAll('.delete');
+      console.log(btnEliminar);
+
+      // const test1 = document.querySelector('.contentmodal');
+      // console.log(test1);
+      btnEliminar.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          console.log(e.target.dataset.id);
+          const deleteModalContenedor = document.createElement('div');
+          deleteModalContenedor.className = 'delete-Modal-Contenedor';
+          deleteModalContenedor.id = 'delete-Modal-Contenedor';
+          // ------------
+
+          const prueba = `
+                    <div id="delete-Modal" class="delete-Modal">
+                    <p id="equisSalir" class="equisSalir"> X </p>
+                    <p id="Q" class="Q"> ¿Quieres eliminar este post? </p>
+                    <button id="borrarBtn" data-id='${e.target.dataset.id}' class="borrarBtn">Eliminar</button>
+                    </div>
+                     `;
+
+          deleteModalContenedor.innerHTML = prueba;
+          div.appendChild(deleteModalContenedor);
+
+          const boton = deleteModalContenedor.querySelector('.borrarBtn');
+          const equisSalir = deleteModalContenedor.querySelector('.equisSalir');
+          const deleteModal = deleteModalContenedor.querySelector('.delete-Modal');
+
+          boton.addEventListener('click', async (e) => {
+            console.log(e.target.dataset.id);
+            await deleteTask(e.target.dataset.id).then((res) => {
+              deleteModalContenedor.style.display = 'none';
+              deleteModal.style.display = 'none';
+            }).catch((err) => console.log(err));
+          });
+
+          // test1.style.display = 'flex';
+          deleteModalContenedor.style.display = 'flex';
+          deleteModal.style.display = 'flex';
+
+          console.log(equisSalir);
+          equisSalir.addEventListener('click', () => {
+            // test1.style.display = 'none';
+            deleteModalContenedor.style.display = 'none';
+            deleteModal.style.display = 'none';
+          });
+        });
+      });
+      // -----------------------------------
+
       const userId = user1().uid;
       const likeBtn = taskContainer.querySelectorAll('.like');
 
@@ -125,13 +177,13 @@ export const homeE = (taskContainer, taskForm, div) => {
         });
       });
 
-      const btnEliminar = taskContainer.querySelectorAll('.delete');
+      // const btnEliminar = taskContainer.querySelectorAll('.delete');
 
-      btnEliminar.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-          deleteTask(e.target.dataset.id);
-        });
-      });
+      // btnEliminar.forEach((btn) => {
+      //   btn.addEventListener('click', (e) => {
+      //     deleteTask(e.target.dataset.id);
+      //   });
+      // });
 
       const btnEditar = taskContainer.querySelectorAll('.editar');
 

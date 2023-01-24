@@ -1,4 +1,18 @@
 export const templateRegister = `
+<div class="InicioFilter"></div>
+<div class="fondo"></div>
+<section class='loginOculto'>
+    <div class="frasePagina"> Un lugar dónde compartir, hablar y conocer mucho más sobre el mundo de las mascotas.
+    <br>Sé parte de esta gran comunidad y sé la voz de tu adorada mascota.
+    </div>
+    <div class="imagenesPagina">
+    <img  class="imagenUno" >
+    <img  class="imagenDos" >
+    <img  class="imagenTres" >
+    </div>
+</section>
+
+<section class="pantalla">
     <section class="presentacion" id="">
         <div class="logo" id=""></div>
         <div class="nombre" id="">PETSBOOK</div>
@@ -19,4 +33,5 @@ export const templateRegister = `
             <div class="iniciar" id="iniciar">Inicia Sesión</div>
         </section>
     </section>
+</section>
   `;

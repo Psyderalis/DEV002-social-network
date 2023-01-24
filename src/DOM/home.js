@@ -22,8 +22,8 @@ export const Home = () => {
   });
 
   const div = document.createElement('div');
-  div.className = 'home';
-  div.id = 'home';
+  div.className = 'Inicio';
+  // div.id = 'home';
   // const templateHome = `
   //           <div id="cabeza">
   //               <div class='head'><img id= "logoDeVistaHome" src="imagenes/Logo.png" width=50px>

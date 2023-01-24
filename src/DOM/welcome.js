@@ -20,7 +20,7 @@ export const Welcome = () => {
   });
 
   const div = document.createElement('div');
-  div.className = 'pantalla';
+  div.className = 'Inicio';
   div.id = 'bienvenida';
   // const Bienvenida = ;
 

@@ -17,7 +17,7 @@ import { templateInicio } from '../Templates/logIn.js';
 
 export const Login = () => {
   const div = document.createElement('div');
-  div.className = 'pantalla';
+  div.className = 'Inicio';
   div.id = 'inicio';
   // const pantallaInicio = ;
   div.innerHTML = templateInicio;

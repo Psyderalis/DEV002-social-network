@@ -1,4 +1,7 @@
 export const templateHome = `
+<div class="InicioFilter"></div>
+<div class="fondo"></div>
+<section class="home" id="home">
             <div id="cabeza">
                 <div class='head'><img id= "logoDeVistaHome" src="imagenes/Logo.png" width=50px>
                     <span id="etsbook">ETSBOOK</span>
@@ -36,4 +39,5 @@ export const templateHome = `
              </div>
              <img class="fotoDePerfil" src="imagenes/pug.jpg" alt='foto del usuario'>
            </div>
+</section>
     `;

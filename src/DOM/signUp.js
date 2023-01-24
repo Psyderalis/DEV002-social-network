@@ -14,7 +14,7 @@ import { templateRegister } from '../Templates/signUp.js';
 // Pantalla 2 - Registrate --------------------------------
 export const Register = () => {
   const div = document.createElement('div');
-  div.className = 'pantalla';
+  div.className = 'Inicio';
   div.id = 'inicio';
   // const pantallaRegistro = `
   //   <section class="presentacion" id="">
