@@ -16,7 +16,7 @@
 
 Las redes sociales son plataformas digitales formadas por comunidades de individuos con intereses, actividades o relaciones en común (como amistad, parentesco, trabajo). Las redes sociales permiten el contacto entre personas y funcionan como un medio para comunicarse e intercambiar información.
 
-<img src="./Img-ReadMe/red-social.jpg" alt="Imágen de una red social."/>
+<img src="red-social.jpg" alt="Imágen de una red social."/>
 
 ***
 ## 2. Sobre Petsbook
@@ -89,16 +89,16 @@ Cuando pensamos en las apps que ya tenemos instaladas en nuestros celulares, cae
 ***
 ## 5.  Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)
 
-<img src="./Img-ReadMe/captura-de-pantalla-de-prototipo-de-baja-fidelidad-mobile.jpg" alt="Captura de panatalla de nuestro prototipo de baja fidelidad mobile en
+<img src="captura-de-pantalla-de-prototipo-de-baja-fidelidad-mobile.jpg" alt="Captura de panatalla de nuestro prototipo de baja fidelidad mobile en
 Figma."/>
-<img src="./Img-ReadMe/captura-prototipo-vista-de-desktop.jpg" alt="Captura de panatalla de nuestro prototipo de baja fidelidad desktop en Figma."/>
+<img src="captura-prototipo-vista-de-desktop.jpg" alt="Captura de panatalla de nuestro prototipo de baja fidelidad desktop en Figma."/>
 
 
 ## 6. Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
 
-<img src="./Img-ReadMe/captura-de-pantalla-de-prototipo-de-alta-fidelidad-mobile.jpg" alt="Captura de panatalla de nuestro prototipo de alta fidelidad mobile en
+<img src="captura-de-pantalla-de-prototipo-de-alta-fidelidad-mobile.jpg" alt="Captura de pantalla de nuestro prototipo de alta fidelidad mobile en
 Figma."/>
-<img src="./Img-ReadMe/captura-prototipo-alta-vista-de-desktop.jpg" alt="Captura de panatalla de nuestro prototipo de alta fidelidad desktop en Figma."/>
+<img src="captura-prototipo-alta-vista-de-desktop.jpg" alt="Captura de panatalla de nuestro prototipo de alta fidelidad desktop en Figma."/>
 
 ***
 ## 7. Consideraciones técnicas UX
