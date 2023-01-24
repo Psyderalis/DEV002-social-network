@@ -4,9 +4,9 @@
 /* eslint-disable no-param-reassign */
 import {
   deleteTask, getTask, onGetTasks, saveTask, updateTask, giveLike, disLike,
-} from './app/firestore.js';
+} from '../app/firestore.js';
 
-import { user1 } from './app/auth.js';
+import { user1 } from '../app/auth.js';
 
 export const homeE = (taskContainer, taskForm, div) => {
   const editando = false;
