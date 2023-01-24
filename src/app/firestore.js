@@ -93,9 +93,9 @@ export const giveLike = (id, nuevoLike) => {
       arrayUnion(
         nuevoLike,
       ),
-  })
-    .then(() => console.log("+1 like"))
-    .catch((error) => console.error("Error", error));
+  });
+  // .then(() => console.log("+1 like"))
+  // .catch((error) => console.error("Error", error));
 };
 
 export const disLike = (id, viejoLike) => {
@@ -104,9 +104,9 @@ export const disLike = (id, viejoLike) => {
       arrayRemove(
         viejoLike,
       ),
-  })
-    .then(() => console.log("-1 like"))
-    .catch((error) => console.error("Error", error));
+  });
+  // .then(() => console.log("-1 like"))
+  // .catch((error) => console.error("Error", error));
 };
 
 export {

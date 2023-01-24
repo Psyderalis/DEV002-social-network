@@ -3,7 +3,7 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/no-cycle */
 // import {  } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
-import { homeE } from '../app/home.js';
+import { homeE } from '../post.js';
 import { onNavigate } from '../main.js';
 import { auth, onAuthStateChanged, logout } from '../app/auth.js';
 import { templateHome } from '../Templates/home.js';
